@@ -126,6 +126,18 @@
         background-color: #0074b0;
         border-radius: 2px;
       }
+        @media (max-width: 988px) {
+        .navbar-nav .nav-link.active::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 1.5%; /* Adjust if needed */
+          width: 4%; /* Adjust width for smaller screens */
+          height: 2px;
+          background-color: #0074b0;
+          border-radius: 2px;
+        }
+      }
 
       /* ====== Hero (kept) ====== */
       .hero-image {
@@ -281,12 +293,41 @@
         background-color: transparent;
         border: 3px solid #ddd;
         border-radius: 30px !important;
+          display: block;
+  height: auto;
       }
       .pricing-box h4 {
         text-align: center;
         color: #333;
         font-weight: bold;
       }
+      .form-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+  
+}
+
+
+@media (max-width: 988px) {
+  .pricing-box {
+    padding: 1rem;
+  }
+
+  .form-check {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8spx;
+  }
+
+  .form-check-label {
+    text-align: right;
+    width: 100%;
+  }
+}
+
       .form-check-label {
         font-size: 16px;
       }
@@ -649,80 +690,80 @@
 
         <div class="row pricing2">
           <div class="row my-5">
-            <div class="offset-1 col-md-5">
+<div class="col-12 col-md-5 offset-md-1">
               <div class="pricing-box p-4 shadow rounded">
                 <h4 class="mb-3">التسويق الرقمي</h4>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >باقة تسويق عبر وسائل التواصل</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٣٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="pricing1"
-                    >باقة تسويق عبر وسائل التواصل</label
-                  >
                 </div>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >تحسين محركات البحث</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٥٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="service2"
-                    >تحسين محركات البحث</label
-                  >
                 </div>
 
                 <div class="form-check">
-              <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                   <label class="form-check-label" for="service3"
-                    >حملة إعلانات مدفوعة</label
+                  >حملة إعلانات مدفوعة</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                 </div>
 
                 <div class="form-check">
-             <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-            </div>
                   <label class="form-check-label" for="service3"
-                    >استراتيجية تسويق رقمية كاملة</label
+                  >استراتيجية تسويق رقمية كاملة</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
                 </div>
               </div>
             </div>
 
-            <div class="offset-1 col-md-5">
+<div class="col-12 col-md-5 offset-md-1">
               <div class="pricing-box p-4 shadow rounded">
                 <h4 class="mb-3">تطوير المواقع</h4>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >صفحة هبوط</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٣٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="pricing1"
-                    >صفحة هبوط</label
-                  >
                 </div>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >موقع صغير (3–5 صفحات)</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٥٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="service2"
-                    >موقع صغير (3–5 صفحات)</label
-                  >
                 </div>
 
                 <div class="form-check">
-              <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                   <label class="form-check-label" for="service3"
-                    >موقع متوسط (6–10 صفحات)</label
+                  >موقع متوسط (6–10 صفحات)</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                 </div>
 
                 <div class="form-check">
-             <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-            </div>
                   <label class="form-check-label" for="service3"
-                    >موقع تجارة إلكترونية</label
+                  >موقع تجارة إلكترونية</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
                 </div>
               </div>
             </div>
@@ -736,36 +777,36 @@
                 <h4 class="mb-3">إدارة وسائل التواصل الاجتماعي</h4>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >باقة أساسية</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٣٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="pricing1"
-                    >باقة أساسية</label
-                  >
                 </div>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >باقة قياسية</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٥٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="service2"
-                    >باقة قياسية</label
-                  >
                 </div>
 
                 <div class="form-check">
-              <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                   <label class="form-check-label" for="service3"
-                    >باقة متقدمة</label
+                  >باقة متقدمة</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                 </div>
 
                 <div class="form-check">
-             <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-            </div>
                   <label class="form-check-label" for="service3"
-                    >إدارة كاملة للعلامة التجارية</label
+                  >إدارة كاملة للعلامة التجارية</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
                 </div>
               </div>
             </div>
@@ -775,36 +816,36 @@
                 <h4 class="mb-3">تطوير تطبيقات الموبايل</h4>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >تطبيق أساسي (حتى 3 شاشات)</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٣٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="pricing1"
-                    >تطبيق أساسي (حتى 3 شاشات)</label
-                  >
                 </div>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >تطبيق صغير (حتى 6 شاشات)</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٥٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="service2"
-                    >تطبيق صغير (حتى 6 شاشات)</label
-                  >
                 </div>
 
                 <div class="form-check">
-              <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                   <label class="form-check-label" for="service3"
-                    >تطبيق متوسط (حتى 10 شاشات)</label
+                  >تطبيق متوسط (حتى 10 شاشات)</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                 </div>
 
                 <div class="form-check">
-             <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-            </div>
                   <label class="form-check-label" for="service3"
-                    >تطبيق متقدم</label
+                  >تطبيق متقدم</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
                 </div>
               </div>
             </div>
@@ -824,28 +865,28 @@
                 </div>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >ترحيل إلى السحابة</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٥٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="service2"
-                    >ترحيل إلى السحابة</label
-                  >
                 </div>
 
                 <div class="form-check">
-              <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                   <label class="form-check-label" for="service3"
-                    >إدارة الخدمات السحابية</label
+                  >إدارة الخدمات السحابية</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                 </div>
 
                 <div class="form-check">
-             <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-            </div>
                   <label class="form-check-label" for="service3"
-                    >حلول سحابية للمؤسسات</label
+                  >حلول سحابية للمؤسسات</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
                 </div>
               </div>
             </div>
@@ -855,36 +896,36 @@
                 <h4 class="mb-3">حلول قواعد البيانات</h4>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >تصميم قاعدة بيانات أساسية</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٣٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="pricing1"
-                    >تصميم قاعدة بيانات أساسية</label
-                  >
                 </div>
 
                 <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >تطوير قواعد بيانات</label
+                  >
                   <div class="" id="pricing1">تبدأ من ٥٧٥ 
 <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="service2"
-                    >تطوير قواعد بيانات</label
-                  >
                 </div>
 
                 <div class="form-check">
-              <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                   <label class="form-check-label" for="service3"
-                    >تحسين قاعدة بيانات</label
+                  >تحسين قاعدة بيانات</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
                 </div>
 
                 <div class="form-check">
-             <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-            </div>
                   <label class="form-check-label" for="service3"
-                    >باقة أمان متقدمة لقواعد البيانات</label
+                  >باقة أمان متقدمة لقواعد البيانات</label
                   >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
                 </div>
               </div>
             </div>
@@ -947,7 +988,7 @@
                 ></textarea>
               </div>
               <div class="row">
-                <div class="offset-6 col-md-6 text-left">
+                <div class="offset-md-6 col-md-6 text-left">
                   <button type="submit" class="btn btn-primary text-left">
                     إرسال
                   </button>

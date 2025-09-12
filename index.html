@@ -111,6 +111,18 @@
         background-color: #0074b0;
         border-radius: 2px;
       }
+      @media (max-width: 988px) {
+        .navbar-nav .nav-link.active::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 1.5%; /* Adjust if needed */
+          width: 4%; /* Adjust width for smaller screens */
+          height: 2px;
+          background-color: #0074b0;
+          border-radius: 2px;
+        }
+      }
 
       /* ====== Hero (kept) ====== */
       .hero-image {
@@ -325,27 +337,27 @@
         }
       }
 
-@media screen and (max-width: 1024px) {
-  .apps-section h1 {
-    text-align: center !important;
-    font-weight: 700;
-    max-width: 100% !important;
-    margin-bottom: 32px;
-  }
-  .navbarr{
-    margin-inline: 0px !important;
-  }
-}
+      @media screen and (max-width: 1024px) {
+        .apps-section h1 {
+          text-align: center !important;
+          font-weight: 700;
+          max-width: 100% !important;
+          margin-bottom: 32px;
+        }
+        .navbarr {
+          margin-inline: 0px !important;
+        }
+      }
 
       .apps-section {
         padding-block: clamp(32px, 7vw, 96px);
       }
-  .apps-section h1 {
-    text-align: right;
-    font-weight: 700;
-    max-width: 40%;
-    margin-bottom: 32px;
-  }
+      .apps-section h1 {
+        text-align: right;
+        font-weight: 700;
+        max-width: 40%;
+        margin-bottom: 32px;
+      }
       .apps-shell {
         position: relative;
       }
@@ -615,17 +627,18 @@
           <p>
             من الفكرة إلى منتج قابل للتطوير، فريق تقني موثوق يقدم خدماته بسرعة
           </p>
-<div class="container">
-  <div class="row g-3 justify-content-center">
-    <div class="col-6 col-md-4 d-flex justify-content-center">
-      <a href="#contact" class="btn btn-primary w-auto">اطلب خدمة</a>
-    </div>
-    <div class="col-6 col-md-4 d-flex justify-content-center">
-      <a href="projects.html" class="btn btn-secondary w-auto">استكشف الخدمات</a>
-    </div>
-  </div>
-</div>
-
+          <div class="container">
+            <div class="row g-3 justify-content-center">
+              <div class="col-6 col-md-4 d-flex justify-content-center">
+                <a href="#contact" class="btn btn-primary w-auto">اطلب خدمة</a>
+              </div>
+              <div class="col-6 col-md-4 d-flex justify-content-center">
+                <a href="projects.html" class="btn btn-secondary w-auto"
+                  >استكشف الخدمات</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -885,7 +898,9 @@
       <div class="container">
         <h1>لماذا تختار اطلس للمبرمجيات</h1>
 
-        <div class="apps-shell container d-flex align-items-center justify-content-between gap-3">
+        <div
+          class="apps-shell container d-flex align-items-center justify-content-between gap-3"
+        >
           <!-- left arrow (prev) -->
           <div class="arrow-wrap" aria-label="السابق">
             <i class="bi bi-chevron-right"></i>
