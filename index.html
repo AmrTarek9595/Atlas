@@ -116,7 +116,7 @@
           content: "";
           position: absolute;
           bottom: 0;
-          right: 1.5%; /* Adjust if needed */
+          right: 4%; /* Adjust if needed */
           width: 4%; /* Adjust width for smaller screens */
           height: 2px;
           background-color: #0074b0;
@@ -404,6 +404,11 @@
         max-width: 520px;
         aspect-ratio: 4/3;
       }
+      @media (max-width: 991.98px) {
+        .apps-shell .project-desc {
+          display: none;
+        }
+      }
       .apps-shell .phone {
         position: absolute;
         width: 42%;
@@ -461,12 +466,80 @@
         }
       }
       @media (max-width: 991.98px) {
-        .apps-shell .panel {
-          min-height: 380px;
-          height: auto;
+        /* section title like the screenshot */
+        #projects h1 {
+          text-align: center !important;
+          font-weight: 800;
+          margin-bottom: 28px;
+          width: "100%";
         }
-        .apps-shell .show-projects-container {
-          margin-top: 36px;
+
+        .apps-shell {
+          position: relative;
+        }
+
+        /* take arrows out of the flex row and float them over the panel */
+        .apps-shell .arrow-wrap {
+          top: 50%;
+          transform: translateY(-50%);
+          height: 56px;
+          width: 56px;
+          flex: 0 0 56px;
+          z-index: 5; /* sit above the panel */
+          background: #fff; /* like screenshot */
+        }
+        /* first arrow = prev (chevron-right in your markup) -> left side */
+        .apps-shell .arrow-wrap:first-of-type {
+          left: 12px;
+        }
+        /* second arrow = next (chevron-left) -> right side */
+        .apps-shell .arrow-wrap:last-of-type {
+          right: 12px;
+        }
+
+        /* middle track & panel */
+        .apps-shell .middle {
+          max-width: 60%;
+          min-height: unset;
+        }
+        .apps-shell .panel {
+          width: 100%;
+          height: auto;
+          min-height: 360px;
+          margin: 0; /* remove desktop offset */
+          border-radius: 28px;
+        }
+        .apps-shell .phones {
+          width: 92%;
+          margin-inline: auto;
+        }
+
+        /* show only the project title on mobile, hide long copy */
+        .apps-shell .project-desc {
+          display: none !important; /* keep desktop block hidden on mobile */
+        }
+        .apps-shell .mobile-only {
+          display: block !important;
+          text-align: center;
+          margin: 0 0 16px 0;
+        }
+        .apps-shell .mobile-only.feature-title {
+          font-size: 28px;
+          color: #0a0a7a; /* close to your brand dark */
+          font-weight: 800;
+          margin-top: 24px;
+        }
+
+        /* CTA below the panel on phones */
+        .apps-shell .mobile-cta {
+          display: flex !important;
+          justify-content: center;
+          margin-top: 28px;
+        }
+        .apps-shell .cta-btn {
+          padding: 12px 22px;
+          border-radius: 18px;
+          font-weight: 700;
         }
       }
 
@@ -653,7 +726,7 @@
           </p>
         </div>
 
-        <div class="row g-4 px-5">
+        <div class="row g-4 px-md-5">
           <!-- 1 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-1">
@@ -899,7 +972,7 @@
         <h1>لماذا تختار اطلس للمبرمجيات</h1>
 
         <div
-          class="apps-shell container d-flex align-items-center justify-content-between gap-3"
+          class="apps-shell container d-flex align-items-center justify-content-between gap-md-3"
         >
           <!-- left arrow (prev) -->
           <div class="arrow-wrap" aria-label="السابق">
@@ -911,8 +984,13 @@
             <!-- ===== Slide 1 ===== -->
             <div class="slide active">
               <div class="row align-items-center g-4">
-                <!-- النص -->
-                <div class="col-lg-6">
+                <!-- mobile title (shown on phones only) -->
+                <h3 class="feature-title mobile-only d-lg-none">
+                  تطوير التطبيقات
+                </h3>
+
+                <!-- desktop text (hidden on mobile already) -->
+                <div class="col-lg-6 project-desc">
                   <h3 class="feature-title">تطوير التطبيقات</h3>
                   <p class="feature-text mb-3">
                     بيت لينك هو تطبيق ذكي وسهل الاستخدام مصمم لجمع أصحاب
@@ -932,22 +1010,21 @@
                   </div>
                 </div>
 
-                <!-- الصورة -->
+                <!-- image panel -->
                 <div class="col-lg-6">
                   <div class="panel">
                     <div class="phones">
-                      <img
-                        class="phone left"
-                        src="https://images.unsplash.com/photo-1557180295-76eee20ae8aa?q=80&w=900&auto=format&fit=crop"
-                        alt="app screen 1"
-                      />
-                      <img
-                        class="phone right"
-                        src="https://images.unsplash.com/photo-1557180295-cb0b3b3c99aa?q=80&w=900&auto=format&fit=crop"
-                        alt="app screen 2"
-                      />
+                      <img class="phone left" src="..." alt="app screen 1" />
+                      <img class="phone right" src="..." alt="app screen 2" />
                     </div>
                   </div>
+                </div>
+
+                <!-- mobile CTA (below panel) -->
+                <div class="mobile-cta d-lg-none">
+                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                    >عرض جميع المشاريع</a
+                  >
                 </div>
               </div>
             </div>
@@ -955,7 +1032,13 @@
             <!-- ===== Slide 2 ===== -->
             <div class="slide">
               <div class="row align-items-center g-4">
-                <div class="col-lg-6">
+                <!-- mobile title -->
+                <h3 class="feature-title mobile-only d-lg-none">
+                  تصميم واجهات المستخدم
+                </h3>
+
+                <!-- desktop text -->
+                <div class="col-lg-6 project-desc">
                   <h3 class="feature-title">تصميم واجهات المستخدم</h3>
                   <p class="feature-text mb-3">
                     نصمم واجهات جذّابة وبسيطة تمنح مستخدميك تجربة سلسة، مع
@@ -966,11 +1049,13 @@
                     وسريع ويؤدي هدفه بوضوح.
                   </p>
                   <div class="show-projects-container">
-                    <a href="#" class="btn btn-outline-dark cta-btn"
+                    <a href="projects.html" class="btn btn-outline-dark cta-btn"
                       >عرض جميع المشاريع</a
                     >
                   </div>
                 </div>
+
+                <!-- image panel -->
                 <div class="col-lg-6">
                   <div class="panel">
                     <div class="phones">
@@ -987,13 +1072,26 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- mobile CTA -->
+                <div class="mobile-cta d-lg-none">
+                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                    >عرض جميع المشاريع</a
+                  >
+                </div>
               </div>
             </div>
 
             <!-- ===== Slide 3 ===== -->
             <div class="slide">
               <div class="row align-items-center g-4">
-                <div class="col-lg-6">
+                <!-- mobile title -->
+                <h3 class="feature-title mobile-only d-lg-none">
+                  حلول الويب والمتاجر
+                </h3>
+
+                <!-- desktop text -->
+                <div class="col-lg-6 project-desc">
                   <h3 class="feature-title">حلول الويب والمتاجر</h3>
                   <p class="feature-text mb-3">
                     مواقع ومتاجر إلكترونية سريعة وآمنة ومتجاوبة، مبنية وفق أفضل
@@ -1004,11 +1102,13 @@
                     لأعمالك على الويب.
                   </p>
                   <div class="show-projects-container">
-                    <a href="#" class="btn btn-outline-dark cta-btn"
+                    <a href="projects.html" class="btn btn-outline-dark cta-btn"
                       >عرض جميع المشاريع</a
                     >
                   </div>
                 </div>
+
+                <!-- image panel -->
                 <div class="col-lg-6">
                   <div class="panel">
                     <div class="phones">
@@ -1024,6 +1124,13 @@
                       />
                     </div>
                   </div>
+                </div>
+
+                <!-- mobile CTA -->
+                <div class="mobile-cta d-lg-none">
+                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                    >عرض جميع المشاريع</a
+                  >
                 </div>
               </div>
             </div>
