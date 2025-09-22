@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
-    <title>أطلس — المشاريع</title>
+    <title>Atlas - Projects</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap RTL -->
@@ -340,7 +340,7 @@
       .textarea-blue {
         border-radius: 5px !important;
         border: 2px solid #cccccc !important;
-        direction: rtl !important;
+        /* direction: rtl !important; */
       }
 
       @media (max-width: 991.98px) {
@@ -627,7 +627,7 @@
       >
         <div class="container-fluid navbarr">
           <!-- Logo -->
-          <a class="navbar-brand" href="#">
+          <a class="navbar-brand" href="../en/index-en.html">
             <img src="../assets/images/logo.svg" alt="logo" />
           </a>
 
@@ -705,15 +705,15 @@
 
                     <div class="form-check mb-3">
                       <label class="form-check-label" for="project">
-                        Travely is a modern travel platform designed to make
-                        exploring the world easier, smarter, and more
-                        enjoyable—whether you’re planning a short weekend
-                        getaway or a long international trip.
+                        It is designed to offer you an elegant atmosphere and modern amenities that make every occasion truly exceptional— from the moment of welcome until the celebration’s finale.
+
+With its spacious layout and sophisticated design, the hall combines luxury and comfort to give your guests an unforgettable experience.
+We also provide comprehensive services that take care of every detail— from décor and lighting to hospitality— to make your special day at Capri Hall a memory that remains forever in the heart.
                       </label>
                     </div>
 
                     <div class="mt-auto mb-5 text-center">
-                      <button class="project-button">View Project</button>
+                      <a href="https://kabry.netlify.app/" class="project-button">View Project</a>
                     </div>
                   </div>
 
@@ -737,19 +737,25 @@
               >
                 <div class="row flex-grow-1">
                   <div class="col-md-5 d-flex flex-column">
-                    <h4 class="mb-3">Graphic Design</h4>
+                    <h4 class="mb-3">UI/UX Design</h4>
 
                     <div class="form-check mb-3">
                       <label class="form-check-label" for="project">
-                        A brand identity that reflects simplicity and
-                        creativity. Colors, shapes, and typography were
-                        carefully chosen to represent the brand’s personality
-                        and values.
+                        <ul style="direction: ltr;">
+  <li> Modern design and user-friendly interface</li>
+  <li> Fully responsive across all devices</li>
+  <li> SEO-friendly and optimized for search engines</li>
+  <li> High loading speed and smooth user experience</li>
+  <li> Flexible and easy-to-manage control panel</li>
+  <li> Multi-language support based on client needs</li>
+  <li> Advanced security and protection</li>
+</ul>
+
                       </label>
                     </div>
 
                     <div class="mt-auto mb-5 text-center">
-                      <button class="project-button">View Project</button>
+                      <a href="http://ostoraksa.netlify.app/" class="project-button">View Project</a>
                     </div>
                   </div>
 
@@ -777,14 +783,17 @@
 
                     <div class="form-check mb-3">
                       <label class="form-check-label" for="project">
-                        Pet Link is a smart, user-friendly app that brings pet
-                        owners together in one place, making it easy to adopt,
-                        find, and care for pets.
+                         Al-Osstoura Hall is not just a venue for celebrations, but a story told in every detail.
+With its luxurious ambiance and elegant designs, the hall offers you an exceptional experience that makes your occasions a symbol of beauty and sophistication.
+
+From the very first moment, you will feel the uniqueness—
+with comprehensive services and attention that exceeds expectations,
+ensuring every moment at Al-Osstoura Hall becomes part of unforgettable memories.
                       </label>
                     </div>
 
                     <div class="mt-auto mb-5 text-center">
-                      <button class="project-button">View Project</button>
+                      <a href="http://ostoraksa.netlify.app/" class="project-button">View Project</a>
                     </div>
                   </div>
 
@@ -815,7 +824,7 @@
             let’s turn your ideas into impactful digital experiences.
           </p>
         </div>
-        <form>
+      <form id="contactForm" onsubmit="return false;">
           <div class="row g-4">
             <div class="col-md-6">
               <div class="mb-3">
@@ -825,6 +834,7 @@
                   class="form-control"
                   id="input1"
                   placeholder="Enter your full name"
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -834,17 +844,16 @@
                   class="form-control"
                   id="input2"
                   placeholder="Enter your email address"
+                  required
                 />
               </div>
               <div class="mb-3">
-                <label for="dropdown" class="form-label"
-                  >Choose a Service</label
-                >
-                <select class="form-select" id="dropdown">
-                  <option selected disabled>Select a service</option>
-                  <option value="1">Website Design</option>
+                <label for="dropdown" class="form-label">Select Service</label>
+                <select class="form-select" id="dropdown" required>
+                  <option selected disabled>Choose a service</option>
+                  <option value="1">Web Design</option>
                   <option value="2">App Development</option>
-                  <option value="3">Tech Consulting</option>
+                  <option value="3">Tech Consultation</option>
                 </select>
               </div>
             </div>
@@ -863,9 +872,9 @@
               </div>
               <div class="row">
                 <div class="offset-md-6 col-md-6 text-left">
-                  <button type="submit" class="btn btn-primary text-left">
-                    Send
-                  </button>
+                 <button id="sendWhatsappBtn" type="button" class="btn btn-primary text-left">
+  Send
+</button>
                 </div>
               </div>
             </div>
@@ -873,13 +882,79 @@
         </form>
       </div>
     </section>
+<script>
+(function () {
+  // ضع هنا رقم الواتساب بالصيغة الدولية بدون + أو مسافات (مثال السعودية: 9665xxxxxxxx)
+  const whatsappNumber = "966551235523"; // <-- غيّره
 
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("sendWhatsappBtn");
+
+  function getValues() {
+    return {
+      name: document.getElementById("input1").value.trim(),
+      email: document.getElementById("input2").value.trim(),
+      service: document.getElementById("dropdown").value || "",
+      message: document.getElementById("message").value.trim()
+    };
+  }
+
+  function validate(values) {
+    if (!values.name) {
+      alert("Please enter your full name.");
+      return false;
+    }
+    if (!values.email) {
+      alert("Please enter your email address.");
+      return false;
+    }
+    if (!values.message) {
+      alert("Please write a short message about your project.");
+      return false;
+    }
+    return true;
+  }
+
+  function buildWhatsAppURL(values) {
+    // رسالة منسقة تظهر داخل واتساب
+    const textLines = [
+      "New message from Atlas Website:",
+      "Name: " + values.name,
+      "Email: " + values.email,
+      values.service ? ("Service: " + values.service) : null,
+      "Message:",
+      values.message
+    ].filter(Boolean);
+
+    const text = textLines.join("\n");
+    const encoded = encodeURIComponent(text);
+
+    // استخدم رابط wa.me (يعمل على الويب والموبايل). يمكنك أيضًا استخدام whatsapp://send?text=...
+    return "https://wa.me/" + whatsappNumber + "?text=" + encoded;
+  }
+
+  btn.addEventListener("click", function (e) {
+    const values = getValues();
+    if (!validate(values)) return;
+
+    const url = buildWhatsAppURL(values);
+
+    // افتح رابط واتساب في تبويب جديد
+    window.open(url, "_blank");
+  });
+
+  // اختياري: منع الـ Enter في بعض الحقول من إرسال الفورم الافتراضي
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+})();
+</script>
     <!-- ======= FOOTER (BLACK) ======= -->
     <footer class="footer-dark">
       <div class="container">
         <div class="row g-4 align-items-start">
           <div class="col-lg-8">
-            <div class="text-center text-lg-start mb-3">
+            <div class="text-center text-lg-end mb-3">
               <img
                 src="../assets/images/logo.svg"
                 alt="Atlas"

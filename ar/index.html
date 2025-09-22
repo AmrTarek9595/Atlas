@@ -414,16 +414,16 @@
       }
       .apps-shell .phone {
         position: absolute;
-        width: 42%;
+        width: 100%;
         top: 50%;
         transform: translateY(-50%);
         filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.18));
         border-radius: 26px;
       }
-      .apps-shell .phone.left {
+      /* .apps-shell .phone.left {
         left: 4%;
         rotate: -18deg;
-      }
+      } */
       .apps-shell .phone.right {
         right: 6%;
         rotate: 5deg;
@@ -639,6 +639,10 @@
         }
       }
     </style>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
   </head>
 
   <body>
@@ -649,7 +653,7 @@
         dir="rtl"
       >
         <div class="container-fluid navbarr">
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="../ar/index.html"
             ><img src="../assets/images/logo.svg" alt="logo"
           /></a>
           <button
@@ -700,7 +704,7 @@
 
     <!-- ===== Hero ===== -->
     <section>
-      <div class="hero-image">
+      <div class="hero-image animate__animated animate__backInDown">
         <div class="hero-text">
           <h1 class="banner-h1">الحلول المناسبة لعملك</h1>
           <p>
@@ -734,8 +738,8 @@
 
         <div class="row g-4 px-md-5">
           <!-- 1 -->
-          <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-1">
+          <div class="offset-md-1 col-md-5 col-sm-12 ">
+            <div class="svc-card svc-1 animate__animated animate__backInLeft animate__delay-2s">
               <i class="bi bi-code-slash svc-icon"></i>
               <h5 class="svc-heading">تطوير المنتجات البرمجية</h5>
               <p class="svc-desc">
@@ -749,7 +753,7 @@
           </div>
           <!-- 2 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-2">
+            <div class="svc-card svc-2 animate__animated animate__backInRight animate__delay-2s">
               <i class="bi bi-graph-up-arrow svc-icon"></i>
               <h5 class="svc-heading">الحلول الرقمية الذكية</h5>
               <p class="svc-desc">
@@ -763,7 +767,7 @@
           </div>
           <!-- 3 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-3">
+            <div class="svc-card svc-3 animate__animated animate__backInLeft animate__delay-2s">
               <i class="bi bi-shield-lock svc-icon"></i>
               <h5 class="svc-heading">حلول الأمن السيبراني</h5>
               <p class="svc-desc">
@@ -777,7 +781,7 @@
           </div>
           <!-- 4 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-4">
+            <div class="svc-card svc-4 animate__animated animate__backInRight animate__delay-2s">
               <i class="bi bi-megaphone svc-icon"></i>
               <h5 class="svc-heading">إعلانات وسائل التواصل الاجتماعي</h5>
               <p class="svc-desc">
@@ -791,7 +795,7 @@
           </div>
           <!-- 5 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-5">
+            <div class="svc-card svc-5 animate__animated animate__backInLeft animate__delay-2s">
               <i class="bi bi-cloud svc-icon"></i>
               <h5 class="svc-heading">خدمات السحابة</h5>
               <p class="svc-desc">
@@ -805,7 +809,7 @@
           </div>
           <!-- 6 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-6">
+            <div class="svc-card svc-6 animate__animated animate__backInRight animate__delay-2s">
               <i class="bi bi-people svc-icon"></i>
               <h5 class="svc-heading">إدارة وسائل التواصل الاجتماعي</h5>
               <p class="svc-desc">
@@ -819,7 +823,7 @@
           </div>
           <!-- 7 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-7">
+            <div class="svc-card svc-7 animate__animated animate__backInLeft animate__delay-2s">
               <i class="bi bi-database svc-icon"></i>
               <h5 class="svc-heading">حلول قواعد البيانات</h5>
               <p class="svc-desc">
@@ -833,7 +837,7 @@
           </div>
           <!-- 8 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
-            <div class="svc-card svc-8">
+            <div class="svc-card svc-8 animate__animated animate__backInRight animate__delay-2s">
               <i class="bi bi-brush svc-icon"></i>
               <h5 class="svc-heading">التصميم الجرافيكي</h5>
               <p class="svc-desc">
@@ -851,8 +855,8 @@
 
     <!-- ===== لماذا نحن ===== -->
     <section>
-      <div class="container">
-        <div class="row whyUS">
+      <div class="container animate__animated animate__flash animate__delay-3s">
+        <div class="row whyUS ">
           <h1>لماذا تختار اطلس للمبرمجيات</h1>
           <br />
           <p>
@@ -973,9 +977,9 @@
       </div>
     </section>
 
-    <section id="projects" class="apps-section">
+    <section id="projects" class="apps-section animate__animated animate__fadeInUp animate__delay-3s">
       <div class="container">
-        <h1>لماذا تختار اطلس للمبرمجيات</h1>
+        <h1>مقتطفات من أعمالنا</h1>
 
         <div
           class="apps-shell container d-flex align-items-center justify-content-between gap-md-3"
@@ -992,23 +996,24 @@
               <div class="row align-items-center g-4">
                 <!-- mobile title (shown on phones only) -->
                 <h3 class="feature-title mobile-only d-lg-none">
-                  تطوير التطبيقات
+                  تطوير المواقع
                 </h3>
 
                 <!-- desktop text (hidden on mobile already) -->
                 <div class="col-lg-6 project-desc">
-                  <h3 class="feature-title">تطوير التطبيقات</h3>
+                  <h3 class="feature-title">تطوير المواقع</h3>
                   <p class="feature-text mb-3">
-                    بيت لينك هو تطبيق ذكي وسهل الاستخدام مصمم لجمع أصحاب
-                    الحيوانات الأليفة في مكان واحد. التطبيق يجعل من السهل على
-                    الناس العثور على الحيوانات الأليفة، والتبنّي، والعناية بها،
-                    مع تقديم مجموعة متنوعة من المزايا الداعمة لأصحاب الحيوانات.
+                   قاعة كابري هي الوجهة المثالية لصناعة أجمل الذكريات.
+صُممت لتمنحكم أجواء راقية وتجهيزات عصرية تجعل كل مناسبة استثنائية،
+من لحظة الترحيب وحتى ختام الاحتفال.
+
+بفضل مساحتها الرحبة وتصاميمها الأنيقة،
+تجمع القاعة بين الفخامة والراحة لتمنح ضيوفكم تجربة لا تُنسى.
+كما نوفر خدمات متكاملة تهتم بأدق التفاصيل،
+من الديكور والإضاءة وحتى الضيافة،
+لنجعل يومكم الخاص في قاعة كابري ذكرى تبقى خالدة في القلوب.
                   </p>
-                  <p class="feature-text mb-4 mt-3">
-                    يجمع أصحاب الحيوانات الأليفة في مكان واحد، ويُسهّل العثور
-                    على الحيوانات الأليفة، مع مزايا داعمة متنوعة لأصحاب
-                    الحيوانات.
-                  </p>
+                 
                   <div class="show-projects-container">
                     <a href="projects.html" class="btn btn-outline-dark cta-btn"
                       >عرض جميع المشاريع</a
@@ -1020,15 +1025,14 @@
                 <div class="col-lg-6">
                   <div class="panel">
                     <div class="phones">
-                      <img class="phone left" src="..." alt="app screen 1" />
-                      <img class="phone right" src="..." alt="app screen 2" />
+                      <img class="phone left" src="../assets/images/project-1.png" alt="app screen 1" />
                     </div>
                   </div>
                 </div>
 
                 <!-- mobile CTA (below panel) -->
                 <div class="mobile-cta d-lg-none">
-                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                  <a href="/ar/index.html" class="btn btn-outline-dark cta-btn"
                     >عرض جميع المشاريع</a
                   >
                 </div>
@@ -1046,14 +1050,16 @@
                 <!-- desktop text -->
                 <div class="col-lg-6 project-desc">
                   <h3 class="feature-title">تصميم واجهات المستخدم</h3>
-                  <p class="feature-text mb-3">
-                    نصمم واجهات جذّابة وبسيطة تمنح مستخدميك تجربة سلسة، مع
-                    اهتمام دقيق بالتفاصيل وتناسق الهوية البصرية.
-                  </p>
-                  <p class="feature-text mb-4 mt-3">
-                    من البحث إلى النماذج الأولية والاختبارات، نضمن أن المنتج سهل
-                    وسريع ويؤدي هدفه بوضوح.
-                  </p>
+               <div class="feature-text mb-3">
+  <p>✅ تصميم عصري وواجهة سهلة الاستخدام</p>
+  <p>✅ متجاوب بالكامل مع جميع الأجهزة (Responsive Design)</p>
+  <p>✅ متوافق مع معايير تحسين محركات البحث (SEO Friendly)</p>
+  <p>✅ سرعة تحميل عالية وتجربة مستخدم سلسة</p>
+  <p>✅ لوحة تحكم مرنة وسهلة الإدارة</p>
+  <p>✅ دعم متعدد اللغات حسب احتياج العميل</p>
+  <p>✅ حماية وأمان عالي المستوى</p>
+</div>
+
                   <div class="show-projects-container">
                     <a href="projects.html" class="btn btn-outline-dark cta-btn"
                       >عرض جميع المشاريع</a
@@ -1067,21 +1073,17 @@
                     <div class="phones">
                       <img
                         class="phone left"
-                        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=900&auto=format&fit=crop"
+                        src="../assets/images/project-2.png"
                         alt="ui screen 1"
                       />
-                      <img
-                        class="phone right"
-                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=900&auto=format&fit=crop"
-                        alt="ui screen 2"
-                      />
+                     
                     </div>
                   </div>
                 </div>
 
                 <!-- mobile CTA -->
                 <div class="mobile-cta d-lg-none">
-                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                  <a href="/ar/index.html" class="btn btn-outline-dark cta-btn"
                     >عرض جميع المشاريع</a
                   >
                 </div>
@@ -1093,19 +1095,19 @@
               <div class="row align-items-center g-4">
                 <!-- mobile title -->
                 <h3 class="feature-title mobile-only d-lg-none">
-                  حلول الويب والمتاجر
+                  تطوير المواقع والمتاجر
                 </h3>
 
                 <!-- desktop text -->
                 <div class="col-lg-6 project-desc">
-                  <h3 class="feature-title">حلول الويب والمتاجر</h3>
+                  <h3 class="feature-title">تطوير المواقع والمتاجر</h3>
                   <p class="feature-text mb-3">
-                    مواقع ومتاجر إلكترونية سريعة وآمنة ومتجاوبة، مبنية وفق أفضل
-                    الممارسات وتجربة شراء مريحة.
-                  </p>
-                  <p class="feature-text mb-4 mt-3">
-                    نركز على الأداء، الـSEO، وسهولة الإدارة لتضمن نموًا مستمرًا
-                    لأعمالك على الويب.
+                    قاعة الأسطورة ليست مجرد مكان للاحتفال، بل هي حكاية تُروى بكل تفاصيلها.
+بأجواء فخمة وتصاميم راقية، تمنحكم القاعة تجربة استثنائية تجعل مناسباتكم عنوانًا للأناقة والجمال.
+
+من اللحظة الأولى ستشعرون بالتميز،
+مع خدمات متكاملة واهتمام يفوق التوقعات،
+لتبقى كل لحظة في قاعة الأسطورة جزءًا من ذكريات لا تُنسى.
                   </p>
                   <div class="show-projects-container">
                     <a href="projects.html" class="btn btn-outline-dark cta-btn"
@@ -1120,21 +1122,17 @@
                     <div class="phones">
                       <img
                         class="phone left"
-                        src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=900&auto=format&fit=crop"
+                        src="../assets/images/project-3.png"
                         alt="web screen 1"
                       />
-                      <img
-                        class="phone right"
-                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop"
-                        alt="web screen 2"
-                      />
+                     
                     </div>
                   </div>
                 </div>
 
                 <!-- mobile CTA -->
                 <div class="mobile-cta d-lg-none">
-                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                  <a href="/ar/projects.html" class="btn btn-outline-dark cta-btn"
                     >عرض جميع المشاريع</a
                   >
                 </div>
@@ -1152,7 +1150,7 @@
     </section>
 
     <!-- ===== Contact ===== -->
-    <section dir="rtl" class="contact-us" id="contact">
+    <section dir="rtl" class="contact-us animate__animated animate__fadeInUp animate__delay-4s" id="contact">
       <div class="container my-5">
         <div class="row">
           <h1 class="text-center">تواصل معنا</h1>
@@ -1161,7 +1159,7 @@
             تجارب رقمية مؤثرة
           </p>
         </div>
-        <form>
+        <form  id="contactForm" onsubmit="return false;">
           <div class="row g-4">
             <div class="col-md-6">
               <div class="mb-3">
@@ -1205,7 +1203,7 @@
               </div>
               <div class="row">
                 <div class="offset-md-6 col-md-6 text-left">
-                  <button type="submit" class="btn btn-primary text-left">
+                  <button id="sendWhatsappBtn" type="submit" class="btn btn-primary text-left">
                     إرسال
                   </button>
                 </div>
@@ -1299,7 +1297,73 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+<script>
+(function () {
+  // ضع هنا رقم الواتساب بالصيغة الدولية بدون + أو مسافات (مثال السعودية: 9665xxxxxxxx)
+  const whatsappNumber = "966551235523"; // <-- غيّره
 
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("sendWhatsappBtn");
+
+  function getValues() {
+    return {
+      name: document.getElementById("input1").value.trim(),
+      email: document.getElementById("input2").value.trim(),
+      service: document.getElementById("dropdown").value || "",
+      message: document.getElementById("message").value.trim()
+    };
+  }
+
+  function validate(values) {
+    if (!values.name) {
+      alert("Please enter your full name.");
+      return false;
+    }
+    if (!values.email) {
+      alert("Please enter your email address.");
+      return false;
+    }
+    if (!values.message) {
+      alert("Please write a short message about your project.");
+      return false;
+    }
+    return true;
+  }
+
+  function buildWhatsAppURL(values) {
+    // رسالة منسقة تظهر داخل واتساب
+    const textLines = [
+      "New message from Atlas Website:",
+      "Name: " + values.name,
+      "Email: " + values.email,
+      values.service ? ("Service: " + values.service) : null,
+      "Message:",
+      values.message
+    ].filter(Boolean);
+
+    const text = textLines.join("\n");
+    const encoded = encodeURIComponent(text);
+
+    // استخدم رابط wa.me (يعمل على الويب والموبايل). يمكنك أيضًا استخدام whatsapp://send?text=...
+    return "https://wa.me/" + whatsappNumber + "?text=" + encoded;
+  }
+
+  btn.addEventListener("click", function (e) {
+    const values = getValues();
+    if (!validate(values)) return;
+
+    const url = buildWhatsAppURL(values);
+
+    // افتح رابط واتساب في تبويب جديد
+    window.open(url, "_blank");
+  });
+
+  // اختياري: منع الـ Enter في بعض الحقول من إرسال الفورم الافتراضي
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+  });
+})();
+</script>
     <!-- ===== Carousel Logic (Vanilla JS) ===== -->
     <script>
       document.querySelectorAll(".apps-shell").forEach(function (shell) {
