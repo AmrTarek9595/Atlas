@@ -30,7 +30,7 @@
     <style>
       @font-face {
         font-family: "SaudiRiyal";
-        src: url("assets/fonts/saudi-riyal.woff") format("woff");
+        src: url("../assets/fonts/saudi-riyal.woff") format("woff");
         font-weight: normal;
         font-style: normal;
       }
@@ -39,7 +39,7 @@
       :root {
         --brand-dark: #000061;
         --text-muted: #6b7280;
-
+        --nav-height: 180px;
         /* used by "مشاريعنا" section */
         --ink: #0b0a5a;
         --ring: #0e0e84;
@@ -65,6 +65,7 @@
       }
       body {
         background: #fff;
+        padding-top: var(--nav-height);
       }
 
       /* ====== Navbar (kept) ====== */
@@ -137,8 +138,8 @@
           background-color: #0074b0;
           border-radius: 2px;
         }
-        .project{
-              align-content: space-around;
+        .project {
+          align-content: space-around;
         }
       }
       /* ====== Hero (kept) ====== */
@@ -147,7 +148,7 @@
             rgb(255 250 250 / 0%),
             rgb(255 255 255 / 30%)
           ),
-          url("assets/images/banner.png");
+          url("../assets/images/banner.png");
         min-height: 70vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -620,11 +621,17 @@
   <body>
     <!-- ===== Navbar ===== -->
     <section>
-      <nav class="navbar navbar-expand-lg" dir="rtl">
+      <nav
+        class="navbar navbar-expand-lg fixed-top shadow-sm bg-white"
+        dir="ltr"
+      >
         <div class="container-fluid navbarr">
-          <a class="navbar-brand" href="#"
-            ><img src="assets/images/logo.svg" alt="logo"
-          /></a>
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/logo.svg" alt="logo" />
+          </a>
+
+          <!-- Mobile Toggler -->
           <button
             class="navbar-toggler"
             type="button"
@@ -637,31 +644,34 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
+          <!-- Navbar Links -->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" aria-current="page" href="index.html"
-                >الرئيسية</a
+              <a class="nav-link" aria-current="page" href="index-en.html"
+                >Home</a
               >
-              <a class="nav-link" href="index.html#services">الخدمات</a>
-              <a class="nav-link" href="pricing.html">الأسعار</a>
-              <a class="nav-link active" href="projects.html">المشاريع</a>
+              <a class="nav-link" href="index-en.html#services">Services</a>
+              <a class="nav-link" href="pricing-en.html">Pricing</a>
+              <a class="nav-link active" href="projects-en.html">Projects</a>
             </div>
           </div>
 
+          <!-- Language Switch & Contact -->
           <div class="collapse navbar-collapse">
             <div class="navbar-nav">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-3">
-                    <a href="/en" class="lang-circle">EN</a>
+                    <a href="../ar/projects.html" class="lang-circle">AR</a>
                   </div>
                   <div class="col-9">
                     <a
                       href="#contact"
                       class="nav-bar-button"
                       style="text-decoration: none"
-                      >تواصل معانا</a
                     >
+                      Contact Us
+                    </a>
                   </div>
                 </div>
               </div>
@@ -675,14 +685,15 @@
     <section>
       <div class="container">
         <div class="row project">
-          <h1>مشاريعنا</h1>
+          <h1>Our Projects</h1>
           <p>
-            استكشف أحدث مشاريعنا التي تجمع بين الإبداع والابتكار والحلول الرقمية
-            الناجحة.
+            Explore our latest projects that combine creativity, innovation, and
+            successful digital solutions.
           </p>
         </div>
 
         <div class="row project">
+          <!-- Project 1 -->
           <div class="row my-5">
             <div class="offset-md-1 col-md-10 col-sm-12">
               <div
@@ -690,25 +701,26 @@
               >
                 <div class="row flex-grow-1">
                   <div class="col-md-5 d-flex flex-column">
-                    <h4 class="mb-3">تطوير المواقع</h4>
+                    <h4 class="mb-3">Website Development</h4>
 
                     <div class="form-check mb-3">
                       <label class="form-check-label" for="project">
-                        ترافلي هو منصة سفر حديثة مصممة لجعل استكشاف العالم أسهل
-                        وأكثر ذكاءً ومتعة. سواء كنت تخطط لعطلة نهاية أسبوع قصيرة
-                        أو رحلة دولية طويلة.
+                        Travely is a modern travel platform designed to make
+                        exploring the world easier, smarter, and more
+                        enjoyable—whether you’re planning a short weekend
+                        getaway or a long international trip.
                       </label>
                     </div>
 
-                    <!-- زرار تحت مع مسافة -->
                     <div class="mt-auto mb-5 text-center">
-                      <button class="project-button">عرض المشروع</button>
+                      <button class="project-button">View Project</button>
                     </div>
                   </div>
 
                   <div class="col-md-7">
                     <img
-                      src="assets/images/project-1.png"
+                      src="../assets/images/project-1.png"
+                      alt="Travely website project preview"
                       style="max-width: 100%"
                     />
                   </div>
@@ -716,6 +728,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 2 -->
           <div class="row my-5">
             <div class="offset-md-1 col-md-10 col-sm-12">
               <div
@@ -723,25 +737,26 @@
               >
                 <div class="row flex-grow-1">
                   <div class="col-md-5 d-flex flex-column">
-                    <h4 class="mb-3">التصميم الجرافيكي</h4>
+                    <h4 class="mb-3">Graphic Design</h4>
 
                     <div class="form-check mb-3">
                       <label class="form-check-label" for="project">
-                        الشعار يعكس البساطة والإبداع وهوية بصرية فريدة. الألوان
-                        والأشكال والخطوط اختيرت بعناية لتمثل شخصية العلامة
-                        وقيمها
+                        A brand identity that reflects simplicity and
+                        creativity. Colors, shapes, and typography were
+                        carefully chosen to represent the brand’s personality
+                        and values.
                       </label>
                     </div>
 
-                    <!-- زرار تحت مع مسافة -->
                     <div class="mt-auto mb-5 text-center">
-                      <button class="project-button">عرض المشروع</button>
+                      <button class="project-button">View Project</button>
                     </div>
                   </div>
 
                   <div class="col-md-7">
                     <img
-                      src="assets/images/project-2.png"
+                      src="../assets/images/project-2.png"
+                      alt="Brand identity and logo design preview"
                       style="max-width: 100%"
                     />
                   </div>
@@ -749,6 +764,8 @@
               </div>
             </div>
           </div>
+
+          <!-- Project 3 -->
           <div class="row my-5">
             <div class="offset-md-1 col-md-10 col-sm-12">
               <div
@@ -756,25 +773,25 @@
               >
                 <div class="row flex-grow-1">
                   <div class="col-md-5 d-flex flex-column">
-                    <h4 class="mb-3">تطوير التطبيقات</h4>
+                    <h4 class="mb-3">App Development</h4>
 
                     <div class="form-check mb-3">
                       <label class="form-check-label" for="project">
-                        بيت لينك هو تطبيق ذكي وسهل الاستخدام مصمم لجمع أصحاب
-                        الحيوانات الأليفة في مكان واحد. التطبيق يجعل من السهل
-                        الاعتناء بالحيوانات الاليفة
+                        Pet Link is a smart, user-friendly app that brings pet
+                        owners together in one place, making it easy to adopt,
+                        find, and care for pets.
                       </label>
                     </div>
 
-                    <!-- زرار تحت مع مسافة -->
                     <div class="mt-auto mb-5 text-center">
-                      <button class="project-button">عرض المشروع</button>
+                      <button class="project-button">View Project</button>
                     </div>
                   </div>
 
                   <div class="col-md-7">
                     <img
-                      src="assets/images/project-3.png"
+                      src="../assets/images/project-3.png"
+                      alt="Pet Link mobile app screens preview"
                       style="max-width: 100%"
                     />
                   </div>
@@ -782,66 +799,72 @@
               </div>
             </div>
           </div>
+          <!-- /.row my-5 -->
         </div>
+        <!-- /.row.project -->
       </div>
     </section>
 
     <!-- ===== Contact ===== -->
-    <section dir="rtl" class="contact-us" id="contact">
+    <section dir="ltr" class="contact-us" id="contact">
       <div class="container my-5">
         <div class="row">
-          <h1 class="text-center">تواصل معنا</h1>
+          <h1 class="text-center">Contact Us</h1>
           <p class="text-center">
-            تبدأ الابتكارات برسالة بسيطة. تواصل معنا ودعنا نحوّل أفكارك إلى
-            تجارب رقمية مؤثرة
+            Innovations begin with a simple message. Get in touch with us and
+            let’s turn your ideas into impactful digital experiences.
           </p>
         </div>
         <form>
           <div class="row g-4">
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="input1" class="form-label">الاسم الكامل</label>
+                <label for="input1" class="form-label">Full Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="input1"
-                  placeholder="أدخل اسمك الكامل"
+                  placeholder="Enter your full name"
                 />
               </div>
               <div class="mb-3">
-                <label for="input2" class="form-label">البريد الإلكتروني</label>
+                <label for="input2" class="form-label">Email Address</label>
                 <input
                   type="email"
                   class="form-control"
                   id="input2"
-                  placeholder="أدخل بريدك الالكتروني"
+                  placeholder="Enter your email address"
                 />
               </div>
               <div class="mb-3">
-                <label for="dropdown" class="form-label">اختر الخدمة</label>
+                <label for="dropdown" class="form-label"
+                  >Choose a Service</label
+                >
                 <select class="form-select" id="dropdown">
-                  <option selected disabled>اختر خدمة</option>
-                  <option value="1">تصميم مواقع</option>
-                  <option value="2">تطوير تطبيقات</option>
-                  <option value="3">استشارات تقنية</option>
+                  <option selected disabled>Select a service</option>
+                  <option value="1">Website Design</option>
+                  <option value="2">App Development</option>
+                  <option value="3">Tech Consulting</option>
                 </select>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="message" class="form-label">أخبرنا عن مشروعك</label>
+                <label for="message" class="form-label"
+                  >Tell Us About Your Project</label
+                >
                 <textarea
                   class="form-control textarea-blue"
                   id="message"
                   rows="6"
-                  placeholder="اكتب لنا عن مشروعك..."
+                  placeholder="Write to us about your project..."
                 ></textarea>
               </div>
               <div class="row">
                 <div class="offset-md-6 col-md-6 text-left">
                   <button type="submit" class="btn btn-primary text-left">
-                    إرسال
+                    Send
                   </button>
                 </div>
               </div>
@@ -852,20 +875,21 @@
     </section>
 
     <!-- ======= FOOTER (BLACK) ======= -->
-     <footer class="footer-dark" dir="rtl">
+    <footer class="footer-dark">
       <div class="container">
         <div class="row g-4 align-items-start">
           <div class="col-lg-8">
             <div class="text-center text-lg-start mb-3">
               <img
-                src="assets/images/logo.svg"
-                alt="أطلس"
+                src="../assets/images/logo.svg"
+                alt="Atlas"
                 class="footer-logo"
               />
             </div>
             <p class="footer-text mb-4">
-              نحن متخصصون في تقديم خدمات رقمية احترافية، من البرمجة والتصميم إلى
-              التسويق والاستراتيجيات المخصصة لتناسب احتياجات عملك.
+              We specialize in delivering professional digital services — from
+              development and design to marketing and tailored strategies that
+              fit your business needs.
             </p>
 
             <div class="socials">
@@ -883,39 +907,47 @@
           </div>
 
           <div class="col-lg-4">
-            <h3 class="footer-title">معلومات الاتصال</h3>
+            <h3 class="footer-title">Contact Information</h3>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span
-              ><span>الرياض - السويدي شارع صيدا - ممشي السويد</span>
+              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span>
+              <span>Riyadh — Al-Suwaidi, Saida St., Al-Suwaidi Walk</span>
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-telephone"></i></span
-              ><a href="tel:+966551235523" style="direction: ltr;text-decoration: none;color: white;">+96 6551235523</a>
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span>
+              <a
+                href="tel:+966551235523"
+                style="text-decoration: none; color: white"
+                >+966 55 123 5523</a
+              >
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-telephone"></i></span
-              ><a href="tel:+966550458841" style="direction: ltr;text-decoration: none;color: white;">+96 6550458841</a>
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span>
+              <a
+                href="tel:+966550458841"
+                style="text-decoration: none; color: white"
+                >+966 55 045 8841</a
+              >
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-envelope"></i></span
-              ><span>atlascompany@gmail.com</span>
+              <span class="foot-icon"><i class="bi bi-envelope"></i></span>
+              <span>atlascompany@gmail.com</span>
             </div>
-    
+
             <div class="mt-4">
-              <h3 class="footer-title">ساعات العمل</h3>
+              <h3 class="footer-title">Working Hours</h3>
               <div class="hours">
                 <p>
-                  <small>9:00 صباحًا – 5:00 مساءً</small> &nbsp; — &nbsp; الأحد
-                  – الخميس
+                  <small>9:00 AM – 5:00 PM</small> &nbsp; — &nbsp; Sunday –
+                  Thursday
                 </p>
-                <p><small>مغلق</small> &nbsp; — &nbsp; الجمعة – السبت</p>
+                <p><small>Closed</small> &nbsp; — &nbsp; Friday – Saturday</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="footer-sep"></div>
-        <p class="copy">حقوق النشر 2025© أطلس، جميع الحقوق محفوظة</p>
+        <p class="copy">© 2025 Atlas. All rights reserved.</p>
       </div>
     </footer>
 

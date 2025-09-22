@@ -27,19 +27,19 @@
       rel="stylesheet"
     />
 
-      <style>
-        @font-face {
-  font-family: 'SaudiRiyal';
-  src: url('assets/fonts/saudi-riyal.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  
-}
+    <style>
+      @font-face {
+        font-family: "SaudiRiyal";
+        src: url("../assets/fonts/saudi-riyal.woff") format("woff");
+        font-weight: normal;
+        font-style: normal;
+      }
 
       /* ====== Base ====== */
       :root {
         --brand-dark: #000061;
         --text-muted: #6b7280;
+        --nav-height: 180px;
 
         /* used by "مشاريعنا" section */
         --ink: #0b0a5a;
@@ -66,6 +66,7 @@
       }
       body {
         background: #fff;
+        padding-top: var(--nav-height);
       }
 
       /* ====== Navbar (kept) ====== */
@@ -126,7 +127,7 @@
         background-color: #0074b0;
         border-radius: 2px;
       }
-        @media (max-width: 988px) {
+      @media (max-width: 988px) {
         .navbar-nav .nav-link.active::after {
           content: "";
           position: absolute;
@@ -145,7 +146,7 @@
             rgb(255 250 250 / 0%),
             rgb(255 255 255 / 30%)
           ),
-          url("assets/images/banner.png");
+          url("../assets/images/banner.png");
         min-height: 70vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -202,20 +203,17 @@
         height: 100%;
         position: relative;
         box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-         display: flex;
-  flex-direction: column;
-        
+        display: flex;
+        flex-direction: column;
       }
 
+      .svc-card .svc-desc {
+        flex-grow: 1;
+      }
 
-.svc-card .svc-desc {
-  flex-grow: 1; 
-}
-
-.know-btn {
-  margin-top: auto; 
-}
-
+      .know-btn {
+        margin-top: auto;
+      }
 
       .svc-1 {
         background: white;
@@ -245,7 +243,7 @@
         font-weight: bold;
         font-size: 30px;
         margin-bottom: 10px;
-        margin-block: 40px ;
+        margin-block: 40px;
       }
       .svc-desc {
         color: #e7ebf3;
@@ -282,7 +280,7 @@
         text-align: right;
         font-weight: 700;
         text-align: center;
-    }
+      }
       .pricing p {
         text-align: right;
         /* max-width: 40%; */
@@ -293,8 +291,8 @@
         background-color: transparent;
         border: 3px solid #ddd;
         border-radius: 30px !important;
-          display: block;
-  height: auto;
+        display: block;
+        height: auto;
       }
       .pricing-box h4 {
         text-align: center;
@@ -302,32 +300,28 @@
         font-weight: bold;
       }
       .form-check {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-  
-}
+      @media (max-width: 988px) {
+        .pricing-box {
+          padding: 1rem;
+        }
 
+        .form-check {
+          flex-direction: row;
+          align-items: flex-start;
+          gap: 8spx;
+        }
 
-@media (max-width: 988px) {
-  .pricing-box {
-    padding: 1rem;
-  }
-
-  .form-check {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 8spx;
-  }
-
-  .form-check-label {
-    text-align: right;
-    width: 100%;
-    width: 50%;
-  }
-}
+        .form-check-label {
+          text-align: right;
+          width: 100%;
+          width: 50%;
+        }
+      }
 
       .form-check-label {
         font-size: 16px;
@@ -349,6 +343,9 @@
       }
       .pricing2 .form-check {
         margin-block: 40px;
+        flex-direction: row-reverse;
+        display: flex;
+        justify-content: space-between;
       }
 
       /* ===== Contact (kept) ===== */
@@ -630,11 +627,17 @@
   <body>
     <!-- ===== Navbar ===== -->
     <section>
-      <nav class="navbar navbar-expand-lg" dir="rtl">
+      <nav
+        class="navbar navbar-expand-lg fixed-top shadow-sm bg-white"
+        dir="ltr"
+      >
         <div class="container-fluid navbarr">
-          <a class="navbar-brand" href="#"
-            ><img src="assets/images/logo.svg" alt="logo"
-          /></a>
+          <!-- Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/logo.svg" alt="logo" />
+          </a>
+
+          <!-- Mobile Toggler -->
           <button
             class="navbar-toggler"
             type="button"
@@ -647,26 +650,34 @@
             <span class="navbar-toggler-icon"></span>
           </button>
 
+          <!-- Navbar Links -->
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-   <a class="nav-link " aria-current="page" href="index.html"
-                >الرئيسية</a
+              <a class="nav-link" aria-current="page" href="index-en.html"
+                >Home</a
               >
-              <a class="nav-link" href="index.html#services">الخدمات</a>
-              <a class="nav-link active" href="pricing.html">الأسعار</a>
-              <a class="nav-link " href="projects.html">المشاريع</a>
+              <a class="nav-link" href="index-en.html#services">Services</a>
+              <a class="nav-link active" href="pricing-en.html">Pricing</a>
+              <a class="nav-link" href="projects-en.html">Projects</a>
             </div>
           </div>
 
+          <!-- Language Switch & Contact -->
           <div class="collapse navbar-collapse">
             <div class="navbar-nav">
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-3">
-                    <a href="/en" class="lang-circle">EN</a>
+                    <a href="../ar/pricing.html" class="lang-circle">AR</a>
                   </div>
                   <div class="col-9">
-                    <a href="#contact" class="nav-bar-button"  style="text-decoration: none;">تواصل معانا</a>
+                    <a
+                      href="#contact"
+                      class="nav-bar-button"
+                      style="text-decoration: none"
+                    >
+                      Contact Us
+                    </a>
                   </div>
                 </div>
               </div>
@@ -676,323 +687,390 @@
       </nav>
     </section>
 
- 
-
-  
-
-   <!-- ===== Why Us ===== -->
+    <!-- ===== Why Us ===== -->
     <section>
       <div class="container">
         <div class="row pricing">
-          <h1>خدماتنا وأسعارنا</h1>
-          <p>
-            خدمات عالية الجودة بأسعار تناسب أهدافك واحتياجاتك
-        </p>
+          <h1>Our Services & Pricing</h1>
+          <p>High-quality services at prices that match your goals and needs</p>
         </div>
 
         <div class="row pricing2">
           <div class="row my-5">
-<div class="col-md-5 offset-md-1 col-sm-12 my-5">
+            <!-- Digital Marketing -->
+            <div class="col-md-5 offset-md-1 col-sm-12 my-5">
               <div class="pricing-box p-4 shadow rounded">
-                <h4 class="mb-3">التسويق الرقمي</h4>
+                <h4 class="mb-3">Digital Marketing</h4>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="pricing1"
-                  >باقة تسويق عبر وسائل التواصل</label
+                  <label class="form-check-label"
+                    >Social Media Marketing Package</label
                   >
-                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 375
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service2"
-                  >تحسين محركات البحث</label
+                  <label class="form-check-label"
+                    >Search Engine Optimization (SEO)</label
                   >
-                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 575
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >حملة إعلانات مدفوعة</label
+                  <label class="form-check-label"
+                    >Paid Advertising Campaign</label
                   >
-                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 1000
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >استراتيجية تسويق رقمية كاملة</label
+                  <label class="form-check-label"
+                    >Full Digital Marketing Strategy</label
                   >
-                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-                 </div>
+                  <div class="">
+                    Starting from 1500
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
 
-<div class="col-md-5 offset-md-1 col-sm-12 my-5">
+            <!-- Website Development -->
+            <div class="col-md-5 offset-md-1 col-sm-12 my-5">
               <div class="pricing-box p-4 shadow rounded">
-                <h4 class="mb-3">تطوير المواقع</h4>
+                <h4 class="mb-3">Website Development</h4>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="pricing1"
-                  >صفحة هبوط</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <label class="form-check-label">Landing Page</label>
+                  <div class="">
+                    Starting from 375
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service2"
-                  >موقع صغير (3–5 صفحات)</label
+                  <label class="form-check-label"
+                    >Small Website (3–5 pages)</label
                   >
-                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 575
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >موقع متوسط (6–10 صفحات)</label
+                  <label class="form-check-label"
+                    >Medium Website (6–10 pages)</label
                   >
-                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 1000
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >موقع تجارة إلكترونية</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-                 </div>
+                  <label class="form-check-label">E-commerce Website</label>
+                  <div class="">
+                    Starting from 1500
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-
-            
           </div>
- <div class="row my-5">
 
-                  <div class="offset-md-1 col-md-5 my-5">
-              <div class="pricing-box p-4 shadow rounded">
-                <h4 class="mb-3">إدارة وسائل التواصل الاجتماعي</h4>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="pricing1"
-                  >باقة أساسية</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="service2"
-                  >باقة قياسية</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >باقة متقدمة</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >إدارة كاملة للعلامة التجارية</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-                 </div>
-                </div>
-              </div>
-            </div>
-
+          <!-- Social Media Management -->
+          <div class="row my-5">
             <div class="offset-md-1 col-md-5 my-5">
               <div class="pricing-box p-4 shadow rounded">
-                <h4 class="mb-3">تطوير تطبيقات الموبايل</h4>
+                <h4 class="mb-3">Social Media Management</h4>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="pricing1"
-                  >تطبيق أساسي (حتى 3 شاشات)</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <label class="form-check-label">Basic Package</label>
+                  <div class="">
+                    Starting from 375
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service2"
-                  >تطبيق صغير (حتى 6 شاشات)</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <label class="form-check-label">Standard Package</label>
+                  <div class="">
+                    Starting from 575
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >تطبيق متوسط (حتى 10 شاشات)</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <label class="form-check-label">Advanced Package</label>
+                  <div class="">
+                    Starting from 1000
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >تطبيق متقدم</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-                 </div>
-                </div>
-              </div>
-            </div>
-</div>
-             <div class="row my-5">
-
-                  <div class="offset-md-1 col-md-5 my-5">
-              <div class="pricing-box p-4 shadow rounded">
-                <h4 class="mb-3">خدمات السحابة</h4>
-
-                <div class="form-check">
-                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                  <label class="form-check-label" for="pricing1"
-                    >استضافة أساسية</label
-                  >
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="service2"
-                  >ترحيل إلى السحابة</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >إدارة الخدمات السحابية</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
-                </div>
-
-                <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >حلول سحابية للمؤسسات</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-                 </div>
+                  <label class="form-check-label">Full Brand Management</label>
+                  <div class="">
+                    Starting from 1500
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
 
+            <!-- Mobile App Development -->
             <div class="offset-md-1 col-md-5 my-5">
               <div class="pricing-box p-4 shadow rounded">
-                <h4 class="mb-3">حلول قواعد البيانات</h4>
+                <h4 class="mb-3">Mobile App Development</h4>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="pricing1"
-                  >تصميم قاعدة بيانات أساسية</label
+                  <label class="form-check-label"
+                    >Basic App (up to 3 screens)</label
                   >
-                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 375
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service2"
-                  >تطوير قواعد بيانات</label
+                  <label class="form-check-label"
+                    >Small App (up to 6 screens)</label
                   >
-                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
-<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 575
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >تحسين قاعدة بيانات</label
+                  <label class="form-check-label"
+                    >Medium App (up to 10 screens)</label
                   >
-                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
-    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <div class="">
+                    Starting from 1000
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
 
                 <div class="form-check">
-                  <label class="form-check-label" for="service3"
-                  >باقة أمان متقدمة لقواعد البيانات</label
-                  >
-                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
-                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
-                 </div>
+                  <label class="form-check-label">Advanced App</label>
+                  <div class="">
+                    Starting from 1500
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
                 </div>
               </div>
             </div>
-</div>
+          </div>
+
+          <!-- Cloud Services -->
+          <div class="row my-5">
+            <div class="offset-md-1 col-md-5 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">Cloud Services</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label">Basic Hosting</label>
+                  <div class="">
+                    Starting from 375
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">Cloud Migration</label>
+                  <div class="">
+                    Starting from 575
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label"
+                    >Cloud Services Management</label
+                  >
+                  <div class="">
+                    Starting from 1000
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label"
+                    >Enterprise Cloud Solutions</label
+                  >
+                  <div class="">
+                    Starting from 1500
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Database Solutions -->
+            <div class="offset-md-1 col-md-5 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">Database Solutions</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label">Basic Database Design</label>
+                  <div class="">
+                    Starting from 375
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">Database Development</label>
+                  <div class="">
+                    Starting from 575
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label">Database Optimization</label>
+                  <div class="">
+                    Starting from 1000
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label"
+                    >Advanced Database Security Package</label
+                  >
+                  <div class="">
+                    Starting from 1500
+                    <span style="font-family: 'SaudiRiyal'; font-size: 24px"
+                      >&#xE900;</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===== Contact ===== -->
-    <section dir="rtl" class="contact-us" id="contact">
+    <section dir="ltr" class="contact-us" id="contact">
       <div class="container my-5">
         <div class="row">
-          <h1 class="text-center">تواصل معنا</h1>
+          <h1 class="text-center">Contact Us</h1>
           <p class="text-center">
-            تبدأ الابتكارات برسالة بسيطة. تواصل معنا ودعنا نحوّل أفكارك إلى
-            تجارب رقمية مؤثرة
+            Innovations begin with a simple message. Get in touch with us and
+            let’s turn your ideas into impactful digital experiences.
           </p>
         </div>
         <form>
           <div class="row g-4">
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="input1" class="form-label">الاسم الكامل</label>
+                <label for="input1" class="form-label">Full Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="input1"
-                  placeholder="أدخل اسمك الكامل"
+                  placeholder="Enter your full name"
                 />
               </div>
               <div class="mb-3">
-                <label for="input2" class="form-label">البريد الإلكتروني</label>
+                <label for="input2" class="form-label">Email Address</label>
                 <input
                   type="email"
                   class="form-control"
                   id="input2"
-                  placeholder="أدخل بريدك الالكتروني"
+                  placeholder="Enter your email address"
                 />
               </div>
               <div class="mb-3">
-                <label for="dropdown" class="form-label">اختر الخدمة</label>
+                <label for="dropdown" class="form-label"
+                  >Choose a Service</label
+                >
                 <select class="form-select" id="dropdown">
-                  <option selected disabled>اختر خدمة</option>
-                  <option value="1">تصميم مواقع</option>
-                  <option value="2">تطوير تطبيقات</option>
-                  <option value="3">استشارات تقنية</option>
+                  <option selected disabled>Select a service</option>
+                  <option value="1">Website Design</option>
+                  <option value="2">App Development</option>
+                  <option value="3">Tech Consulting</option>
                 </select>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="message" class="form-label">أخبرنا عن مشروعك</label>
+                <label for="message" class="form-label"
+                  >Tell Us About Your Project</label
+                >
                 <textarea
                   class="form-control textarea-blue"
                   id="message"
                   rows="6"
-                  placeholder="اكتب لنا عن مشروعك..."
+                  placeholder="Write to us about your project..."
                 ></textarea>
               </div>
               <div class="row">
                 <div class="offset-md-6 col-md-6 text-left">
                   <button type="submit" class="btn btn-primary text-left">
-                    إرسال
+                    Send
                   </button>
                 </div>
               </div>
@@ -1003,20 +1081,22 @@
     </section>
 
     <!-- ======= FOOTER (BLACK) ======= -->
-   <footer class="footer-dark" dir="rtl">
+    <footer class="footer-dark" dir="ltr">
       <div class="container">
         <div class="row g-4 align-items-start">
+          <!-- Logo & About -->
           <div class="col-lg-8">
             <div class="text-center text-lg-start mb-3">
               <img
-                src="assets/images/logo.svg"
-                alt="أطلس"
+                src="../assets/images/logo.svg"
+                alt="Atlas"
                 class="footer-logo"
               />
             </div>
             <p class="footer-text mb-4">
-              نحن متخصصون في تقديم خدمات رقمية احترافية، من البرمجة والتصميم إلى
-              التسويق والاستراتيجيات المخصصة لتناسب احتياجات عملك.
+              We specialize in delivering professional digital services, from
+              programming and design to marketing and custom strategies tailored
+              to your business needs.
             </p>
 
             <div class="socials">
@@ -1033,40 +1113,50 @@
             </div>
           </div>
 
+          <!-- Contact Info -->
           <div class="col-lg-4">
-            <h3 class="footer-title">معلومات الاتصال</h3>
+            <h3 class="footer-title">Contact Information</h3>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span
-              ><span>الرياض - السويدي شارع صيدا - ممشي السويد</span>
+              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span>
+              <span>Riyadh - Al-Suwaidi, Saida Street - Al-Suwaidi Walk</span>
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-telephone"></i></span
-              ><a href="tel:+966551235523" style="direction: ltr;text-decoration: none;color: white;">+96 6551235523</a>
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span>
+              <a
+                href="tel:+966551235523"
+                style="direction: ltr; text-decoration: none; color: white"
+                >+96 6551235523</a
+              >
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-telephone"></i></span
-              ><a href="tel:+966550458841" style="direction: ltr;text-decoration: none;color: white;">+96 6550458841</a>
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span>
+              <a
+                href="tel:+966550458841"
+                style="direction: ltr; text-decoration: none; color: white"
+                >+96 6550458841</a
+              >
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-envelope"></i></span
-              ><span>atlascompany@gmail.com</span>
+              <span class="foot-icon"><i class="bi bi-envelope"></i></span>
+              <span>atlascompany@gmail.com</span>
             </div>
-    
+
+            <!-- Working Hours -->
             <div class="mt-4">
-              <h3 class="footer-title">ساعات العمل</h3>
+              <h3 class="footer-title">Working Hours</h3>
               <div class="hours">
                 <p>
-                  <small>9:00 صباحًا – 5:00 مساءً</small> &nbsp; — &nbsp; الأحد
-                  – الخميس
+                  <small>9:00 AM – 5:00 PM</small> &nbsp; — &nbsp; Sunday –
+                  Thursday
                 </p>
-                <p><small>مغلق</small> &nbsp; — &nbsp; الجمعة – السبت</p>
+                <p><small>Closed</small> &nbsp; — &nbsp; Friday – Saturday</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="footer-sep"></div>
-        <p class="copy">حقوق النشر 2025© أطلس، جميع الحقوق محفوظة</p>
+        <p class="copy">Copyright © 2025 Atlas, All Rights Reserved</p>
       </div>
     </footer>
 

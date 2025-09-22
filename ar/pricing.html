@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>أطلس — الأسعار</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap RTL -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.rtl.min.css"
+      integrity="sha512-4W9f7EnJgM33kD11Ux2XNF9DSpJ7LoQXCvBNhzKTorRSyjPHmjXhHMZMafIYqYvTNWahUk2ulNsarMMLDEv4zA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Cairo font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+      <style>
+        @font-face {
+  font-family: 'SaudiRiyal';
+        src: url("../assets/fonts/saudi-riyal.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  
+}
+
+      /* ====== Base ====== */
+      :root {
+        --brand-dark: #000061;
+        --text-muted: #6b7280;
+        --nav-height: 180px;
+
+        /* used by "مشاريعنا" section */
+        --ink: #0b0a5a;
+        --ring: #0e0e84;
+        --muted: #6e6f78;
+        --rail: #e6e6e6;
+        --card: #cfcfcf;
+
+        /* footer */
+        --footer-bg: #0a0a0a;
+        --footer-sep: rgba(255, 255, 255, 0.12);
+        --footer-icon: #1a73e8;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      span,
+      body,
+      section {
+        font-family: "Cairo", sans-serif;
+      }
+      body {
+        background: #fff;
+                padding-top: var(--nav-height);
+
+      }
+
+      /* ====== Navbar (kept) ====== */
+      .navbarr {
+        margin-inline: 300px;
+        gap: 5em;
+      }
+      .navbar-nav {
+        gap: 2em;
+      }
+      .navbar-nav a {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .lang-circle {
+        display: inline-block;
+        background-color: #6c757d;
+        color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .lang-circle:hover {
+        background-color: #495057;
+        color: #fff;
+      }
+      #navbarNavAltMarkup {
+        justify-content: center;
+      }
+      .nav-bar-button {
+        background-color: #000000;
+        font-size: 20px;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 10px 25px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50px;
+        width: 200px;
+      }
+      .navbar-nav .nav-link.active {
+        position: relative;
+      }
+      .navbar-nav .nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 60%;
+        height: 2px;
+        background-color: #0074b0;
+        border-radius: 2px;
+      }
+        @media (max-width: 988px) {
+        .navbar-nav .nav-link.active::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 1.5%; /* Adjust if needed */
+          width: 4%; /* Adjust width for smaller screens */
+          height: 2px;
+          background-color: #0074b0;
+          border-radius: 2px;
+        }
+      }
+
+      /* ====== Hero (kept) ====== */
+      .hero-image {
+        background-image: linear-gradient(
+            rgb(255 250 250 / 0%),
+            rgb(255 255 255 / 30%)
+          ),
+          url("../assets/images/banner.png");
+        min-height: 70vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+      }
+      .banner-h1 {
+        font-size: clamp(32px, 6vw, 80px);
+        color: #090808;
+        margin-bottom: 8px;
+      }
+      .hero-text p {
+        font-size: 20px;
+        color: #374151;
+        margin-bottom: 20px;
+      }
+      .hero-text button {
+        background-color: var(--brand-dark);
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 12px 24px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 288px;
+      }
+
+      /* ====== Services cards (kept) ====== */
+      .services-title {
+        font-weight: 900;
+        letter-spacing: 0.5px;
+      }
+      .services-note {
+        color: var(--text-muted);
+      }
+      .svc-card {
+        border-radius: 20px;
+        margin-inline: 24px;
+        padding: 24px;
+        color: #fff;
+        height: 100%;
+        position: relative;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+         display: flex;
+  flex-direction: column;
+        
+      }
+
+
+.svc-card .svc-desc {
+  flex-grow: 1; 
+}
+
+.know-btn {
+  margin-top: auto; 
+}
+
+
+      .svc-1 {
+        background: white;
+      } /* تطوير المنتجات */
+      .svc-2 {
+        background: #575866;
+      } /* الحلول الذكية */
+      .svc-3 {
+        background: #050a5b;
+      } /* الأمن السيبراني */
+      .svc-4 {
+        background: #9a9a9a;
+      } /* إعلانات السوشيال */
+      .svc-5 {
+        background: #8c8c8c;
+      } /* سحابة */
+      .svc-6 {
+        background: #081063;
+      } /* إدارة سوشيال */
+      .svc-7 {
+        background: #44495a;
+      } /* قواعد بيانات */
+      .svc-8 {
+        background: #097fb0;
+      } /* جرافيك */
+      .svc-heading {
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 10px;
+        margin-block: 40px ;
+      }
+      .svc-desc {
+        color: #e7ebf3;
+        font-size: 18px;
+        /* margin-bottom: 18px; */
+        max-width: 70%;
+      }
+      .know-btn {
+        width: 100%;
+        text-align: end;
+      }
+      .svc-chip {
+        background: #ffffff;
+        color: #111827;
+        border: 0;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 12px;
+      }
+      .svc-icon {
+        font-size: 36px;
+        opacity: 0.95;
+        color: #fff;
+      }
+
+      /* ===== Why us (kept) ===== */
+      .pricing {
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+      }
+      .pricing h1 {
+        text-align: right;
+        font-weight: 700;
+        text-align: center;
+    }
+      .pricing p {
+        text-align: right;
+        /* max-width: 40%; */
+        font-size: 24px;
+        text-align: center;
+      }
+      .pricing-box {
+        background-color: transparent;
+        border: 3px solid #ddd;
+        border-radius: 30px !important;
+          display: block;
+  height: auto;
+      }
+      .pricing-box h4 {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+      }
+      .form-check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+
+  
+}
+
+
+@media (max-width: 988px) {
+  .pricing-box {
+    padding: 1rem;
+  }
+
+  .form-check {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8spx;
+  }
+
+  .form-check-label {
+    text-align: right;
+    width: 100%;
+    width: 50%;
+  }
+}
+
+      .form-check-label {
+        font-size: 16px;
+      }
+      #pricing1 {
+        float: left;
+      }
+      #pricing1 img {
+        width: 15px;
+        height: 15px;
+      }
+      .pricing2 {
+        direction: rtl;
+        justify-content: center;
+      }
+      .pricing2 .form-check-label {
+        float: right;
+        font-size: 20px;
+      }
+      .pricing2 .form-check {
+        margin-block: 40px;
+      }
+
+      /* ===== Contact (kept) ===== */
+      .contact-us form button {
+        background-color: var(--brand-dark);
+        font-size: 20px;
+        outline: 0;
+        display: inline-block;
+        padding: 10px 25px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 170px;
+      }
+      .contact-us h1 {
+        font-size: 42px;
+        font-weight: bold;
+      }
+      .contact-us p {
+        font-size: 20px;
+        color: var(--text-muted);
+      }
+      .contact-us input,
+      .contact-us select,
+      .textarea-blue {
+        border-radius: 5px !important;
+        border: 2px solid #cccccc !important;
+        direction: rtl !important;
+      }
+
+      @media (max-width: 991.98px) {
+        .navbarr {
+          margin-inline: 1rem;
+          gap: 1rem;
+        }
+        .pricing h1,
+        .pricing p {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+
+      /* ===== مشاريعنا ===== */
+      .projects-wrap {
+        position: relative;
+        background: #fff;
+        padding-block: clamp(32px, 7vw, 96px);
+      }
+      .projects-wrap::before,
+      .projects-wrap::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 18px;
+        background: var(--rail);
+        z-index: 1;
+      }
+      .projects-wrap::before {
+        left: 18px;
+      }
+      .projects-wrap::after {
+        right: 18px;
+      }
+      .projects-container {
+        position: relative;
+        z-index: 2;
+        max-width: 1160px;
+      }
+      .nav-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid var(--ring);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+        z-index: 3;
+      }
+      .nav-arrow i {
+        font-size: 30px;
+        color: var(--ring);
+      }
+      .nav-prev {
+        left: 56px;
+      }
+      .nav-next {
+        right: 56px;
+      }
+      .proj-card {
+        background: var(--card);
+        border-radius: 24px;
+        min-height: 420px;
+        padding: clamp(12px, 2.5vw, 26px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .proj-img {
+        width: 100%;
+        max-width: 520px;
+        height: auto;
+        display: block;
+        object-fit: contain;
+      }
+      .projects-title {
+        font-weight: 900;
+        font-size: clamp(36px, 6vw, 64px);
+        margin: 0 0 8px 0;
+        color: #111;
+        text-align: right;
+      }
+      .proj-link {
+        display: inline-block;
+        color: var(--ink);
+        font-weight: 900;
+        font-size: clamp(20px, 2.4vw, 30px);
+        text-decoration: none;
+        border-bottom: 3px solid currentColor;
+        margin-bottom: 12px;
+      }
+      .proj-text {
+        color: var(--muted);
+        font-size: clamp(15px, 1.4vw, 18px);
+        line-height: 2;
+        max-width: 520px;
+      }
+      .pill-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px 26px;
+        border-radius: 999px;
+        border: 3px solid var(--ring);
+        color: var(--ring);
+        background: #fff;
+        font-weight: 800;
+        font-size: clamp(16px, 1.5vw, 22px);
+        transition: 0.2s ease;
+      }
+      .pill-btn:hover {
+        background: var(--ring);
+        color: #fff;
+      }
+      @media (max-width: 1199.98px) {
+        .nav-prev {
+          left: 18px;
+        }
+        .nav-next {
+          right: 18px;
+        }
+      }
+      @media (max-width: 991.98px) {
+        .projects-wrap::before,
+        .projects-wrap::after {
+          display: none;
+        }
+        .nav-prev,
+        .nav-next {
+          display: none;
+        }
+        .projects-title {
+          text-align: center;
+        }
+        .proj-link,
+        .proj-text {
+          text-align: center;
+        }
+        .proj-text {
+          max-width: 100%;
+        }
+      }
+
+      /* ===== Footer (BLACK ONLY) ===== */
+      footer.footer-dark {
+        background: var(--footer-bg);
+        color: #fff;
+        padding: 64px 0 28px;
+        border-radius: 24px;
+        margin: 24px 16px;
+      }
+      .footer-title {
+        font-weight: 800;
+        font-size: clamp(22px, 2.2vw, 28px);
+        margin-bottom: 20px;
+      }
+      .foot-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        color: #e9eef7;
+        font-size: 18px;
+      }
+      .foot-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--footer-icon);
+        display: grid;
+        place-items: center;
+        flex: 0 0 44px;
+      }
+      .foot-icon i {
+        color: #fff;
+        font-size: 20px;
+      }
+
+      .footer-text {
+        color: #cbd5e1;
+        line-height: 2;
+        font-size: 18px;
+        max-width: 70%;
+      }
+
+      .socials {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .socials a {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      .socials a:hover {
+        background: #ffffff22;
+      }
+
+      .hours p {
+        margin: 0 0 8px 0;
+        color: #cbd5e1;
+      }
+      .hours small {
+        color: #aab4c1;
+      }
+
+      .footer-sep {
+        height: 1px;
+        background: var(--footer-sep);
+        margin: 28px 0 16px;
+      }
+      .copy {
+        color: #d1d5db;
+        text-align: center;
+        font-size: 15px;
+      }
+      .footer-logo {
+        max-width: 260px;
+        height: auto;
+      }
+      @media (max-width: 991.98px) {
+        footer.footer-dark {
+          border-radius: 0;
+          margin: 0;
+        }
+        .footer-logo {
+          max-width: 200px;
+        }
+        .foot-item {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== Navbar ===== -->
+    <section>
+      <nav         class="navbar navbar-expand-lg fixed-top shadow-sm bg-white"
+ dir="rtl">
+        <div class="container-fluid navbarr">
+          <a class="navbar-brand" href="#"
+            ><img src="../assets/images/logo.svg" alt="logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+   <a class="nav-link " aria-current="page" href="index.html"
+                >الرئيسية</a
+              >
+              <a class="nav-link" href="index.html#services">الخدمات</a>
+              <a class="nav-link active" href="pricing.html">الأسعار</a>
+              <a class="nav-link " href="projects.html">المشاريع</a>
+            </div>
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <div class="navbar-nav">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <a href="../en/pricing-en.html" class="lang-circle">EN</a>
+                  </div>
+                  <div class="col-9">
+                    <a href="#contact" class="nav-bar-button"  style="text-decoration: none;">تواصل معانا</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+ 
+
+  
+
+   <!-- ===== Why Us ===== -->
+    <section>
+      <div class="container">
+        <div class="row pricing">
+          <h1>خدماتنا وأسعارنا</h1>
+          <p>
+            خدمات عالية الجودة بأسعار تناسب أهدافك واحتياجاتك
+        </p>
+        </div>
+
+        <div class="row pricing2">
+          <div class="row my-5">
+<div class="col-md-5 offset-md-1 col-sm-12 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">التسويق الرقمي</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >باقة تسويق عبر وسائل التواصل</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >تحسين محركات البحث</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >حملة إعلانات مدفوعة</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >استراتيجية تسويق رقمية كاملة</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
+                </div>
+              </div>
+            </div>
+
+<div class="col-md-5 offset-md-1 col-sm-12 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">تطوير المواقع</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >صفحة هبوط</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >موقع صغير (3–5 صفحات)</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >موقع متوسط (6–10 صفحات)</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >موقع تجارة إلكترونية</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+ <div class="row my-5">
+
+                  <div class="offset-md-1 col-md-5 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">إدارة وسائل التواصل الاجتماعي</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >باقة أساسية</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >باقة قياسية</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >باقة متقدمة</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >إدارة كاملة للعلامة التجارية</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="offset-md-1 col-md-5 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">تطوير تطبيقات الموبايل</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >تطبيق أساسي (حتى 3 شاشات)</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >تطبيق صغير (حتى 6 شاشات)</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >تطبيق متوسط (حتى 10 شاشات)</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >تطبيق متقدم</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
+                </div>
+              </div>
+            </div>
+</div>
+             <div class="row my-5">
+
+                  <div class="offset-md-1 col-md-5 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">خدمات السحابة</h4>
+
+                <div class="form-check">
+                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                  <label class="form-check-label" for="pricing1"
+                    >استضافة أساسية</label
+                  >
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >ترحيل إلى السحابة</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >إدارة الخدمات السحابية</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >حلول سحابية للمؤسسات</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="offset-md-1 col-md-5 my-5">
+              <div class="pricing-box p-4 shadow rounded">
+                <h4 class="mb-3">حلول قواعد البيانات</h4>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="pricing1"
+                  >تصميم قاعدة بيانات أساسية</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٣٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service2"
+                  >تطوير قواعد بيانات</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ٥٧٥ 
+<span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >تحسين قاعدة بيانات</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٠٠٠ 
+    <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                </div>
+                </div>
+
+                <div class="form-check">
+                  <label class="form-check-label" for="service3"
+                  >باقة أمان متقدمة لقواعد البيانات</label
+                  >
+                  <div class="" id="pricing1">تبدأ من ١٥٠٠ 
+                     <span style="font-family: 'SaudiRiyal';font-size: 24px;">&#xE900;</span>                
+                 </div>
+                </div>
+              </div>
+            </div>
+</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section dir="rtl" class="contact-us" id="contact">
+      <div class="container my-5">
+        <div class="row">
+          <h1 class="text-center">تواصل معنا</h1>
+          <p class="text-center">
+            تبدأ الابتكارات برسالة بسيطة. تواصل معنا ودعنا نحوّل أفكارك إلى
+            تجارب رقمية مؤثرة
+          </p>
+        </div>
+        <form>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="input1" class="form-label">الاسم الكامل</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input1"
+                  placeholder="أدخل اسمك الكامل"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="input2" class="form-label">البريد الإلكتروني</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="input2"
+                  placeholder="أدخل بريدك الالكتروني"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="dropdown" class="form-label">اختر الخدمة</label>
+                <select class="form-select" id="dropdown">
+                  <option selected disabled>اختر خدمة</option>
+                  <option value="1">تصميم مواقع</option>
+                  <option value="2">تطوير تطبيقات</option>
+                  <option value="3">استشارات تقنية</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="message" class="form-label">أخبرنا عن مشروعك</label>
+                <textarea
+                  class="form-control textarea-blue"
+                  id="message"
+                  rows="6"
+                  placeholder="اكتب لنا عن مشروعك..."
+                ></textarea>
+              </div>
+              <div class="row">
+                <div class="offset-md-6 col-md-6 text-left">
+                  <button type="submit" class="btn btn-primary text-left">
+                    إرسال
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ======= FOOTER (BLACK) ======= -->
+   <footer class="footer-dark" dir="rtl">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-8">
+            <div class="text-center text-lg-start mb-3">
+              <img
+                src="../assets/images/logo.svg"
+                alt="أطلس"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-text mb-4">
+              نحن متخصصون في تقديم خدمات رقمية احترافية، من البرمجة والتصميم إلى
+              التسويق والاستراتيجيات المخصصة لتناسب احتياجات عملك.
+            </p>
+
+            <div class="socials">
+              <a href="#" aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <h3 class="footer-title">معلومات الاتصال</h3>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span
+              ><span>الرياض - السويدي شارع صيدا - ممشي السويد</span>
+            </div>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span
+              ><a href="tel:+966551235523" style="direction: ltr;text-decoration: none;color: white;">+96 6551235523</a>
+            </div>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span
+              ><a href="tel:+966550458841" style="direction: ltr;text-decoration: none;color: white;">+96 6550458841</a>
+            </div>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-envelope"></i></span
+              ><span>atlascompany@gmail.com</span>
+            </div>
+    
+            <div class="mt-4">
+              <h3 class="footer-title">ساعات العمل</h3>
+              <div class="hours">
+                <p>
+                  <small>9:00 صباحًا – 5:00 مساءً</small> &nbsp; — &nbsp; الأحد
+                  – الخميس
+                </p>
+                <p><small>مغلق</small> &nbsp; — &nbsp; الجمعة – السبت</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-sep"></div>
+        <p class="copy">حقوق النشر 2025© أطلس، جميع الحقوق محفوظة</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+      integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

@@ -32,6 +32,7 @@
       :root {
         --brand-dark: #000061;
         --text-muted: #6b7280;
+        --nav-height: 180px;
 
         /* footer */
         --footer-bg: #0a0a0a;
@@ -51,6 +52,7 @@
       }
       body {
         background: #fff;
+        padding-top: var(--nav-height);
       }
 
       /* ====== Navbar (kept) ====== */
@@ -130,7 +132,7 @@
             rgb(255 250 250 / 0%),
             rgb(255 255 255 / 30%)
           ),
-          url("assets/images/banner.png");
+          url("../assets/images/banner.png");
         min-height: 70vh;
         background-position: center;
         background-repeat: no-repeat;
@@ -253,18 +255,17 @@
 
       /* ===== Why us (kept) ===== */
       .whyUS {
-        direction: rtl;
         display: flex;
         flex-direction: column;
       }
       .whyUS h1 {
-        text-align: right;
+        text-align: left;
         font-weight: 700;
         max-width: 40%;
       }
       .whyUS p {
-        text-align: right;
-        max-width: 40%;
+        text-align: left;
+        max-width: 80%;
         font-size: 24px;
       }
       .service-box {
@@ -287,7 +288,7 @@
         height: 15px;
       }
       .whyUS2 {
-        direction: rtl;
+        direction: ltr;
       }
       .whyUS2 .form-check-label {
         float: right;
@@ -295,6 +296,9 @@
       }
       .whyUS2 .form-check {
         margin-block: 40px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
       }
 
       /* ===== Contact (kept) ===== */
@@ -438,7 +442,7 @@
       }
       .apps-shell .show-projects-container {
         display: flex;
-        align-items: center;
+        /* align-items: center; */
         justify-content: center;
         margin-top: 100px;
       }
@@ -641,11 +645,15 @@
   <body>
     <!-- ===== Navbar ===== -->
     <section>
-      <nav class="navbar navbar-expand-lg" dir="rtl">
+      <nav
+        class="navbar navbar-expand-lg fixed-top shadow-sm bg-white"
+        dir="ltr"
+      >
         <div class="container-fluid navbarr">
-          <a class="navbar-brand" href="#"
-            ><img src="assets/images/logo.svg" alt="logo"
-          /></a>
+          <a class="navbar-brand" href="#">
+            <img src="../assets/images/logo.svg" alt="logo" />
+          </a>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -660,12 +668,15 @@
 
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" aria-current="page" href="index.html"
-                >الرئيسية</a
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index-en.html"
+                >Home</a
               >
-              <a class="nav-link" href="index.html#services">الخدمات</a>
-              <a class="nav-link" href="pricing.html">الأسعار</a>
-              <a class="nav-link" href="projects.html">المشاريع</a>
+              <a class="nav-link" href="index-en.html#services">Services</a>
+              <a class="nav-link" href="pricing-en.html">Pricing</a>
+              <a class="nav-link" href="projects-en.html">Projects</a>
             </div>
           </div>
 
@@ -674,15 +685,16 @@
               <div class="container">
                 <div class="row align-items-center">
                   <div class="col-3">
-                    <a href="/en" class="lang-circle">EN</a>
+                    <a href="../ar/index.html" class="lang-circle">AR</a>
                   </div>
                   <div class="col-9">
                     <a
                       href="#contact"
                       class="nav-bar-button"
                       style="text-decoration: none"
-                      >تواصل معانا</a
                     >
+                      Contact Us
+                    </a>
                   </div>
                 </div>
               </div>
@@ -696,19 +708,22 @@
     <section>
       <div class="hero-image">
         <div class="hero-text">
-          <h1 class="banner-h1">الحلول المناسبة لعملك</h1>
+          <h1 class="banner-h1">Solutions for Your Business</h1>
           <p>
-            من الفكرة إلى منتج قابل للتطوير، فريق تقني موثوق يقدم خدماته بسرعة
+            From idea to a scalable product, a trusted tech team delivers fast
+            and reliable services.
           </p>
           <div class="container">
-            <div class="row g-3 justify-content-center">
+            <div class="row g-3 justify-content-center flex-row-reverse">
               <div class="col-6 col-md-4 d-flex justify-content-center">
-                <a href="#contact" class="btn btn-primary w-auto">اطلب خدمة</a>
+                <a href="#contact" class="btn btn-primary w-auto"
+                  >Request a Service</a
+                >
               </div>
               <div class="col-6 col-md-4 d-flex justify-content-center">
-                <a href="projects.html" class="btn btn-secondary w-auto"
-                  >استكشف الخدمات</a
-                >
+                <a href="projects-en.html" class="btn btn-secondary w-auto">
+                  Explore Services
+                </a>
               </div>
             </div>
           </div>
@@ -720,24 +735,25 @@
     <section id="services" class="py-5">
       <div class="container">
         <div class="text-center mb-4">
-          <h2 class="services-title mb-2">خدماتنا</h2>
+          <h2 class="services-title mb-2">Our Services</h2>
           <p class="services-note">
-            خدمات رقمية متكاملة للمواقع، تطبيقات، تصميم، تسويق، واتصالات
+            Complete digital solutions for websites, apps, design, marketing,
+            and communications
           </p>
         </div>
 
-        <div class="row g-4 px-md-5">
+        <div class="row g-4 px-md-5" dir="ltr">
           <!-- 1 -->
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-1">
               <i class="bi bi-code-slash svc-icon"></i>
-              <h5 class="svc-heading">تطوير المنتجات البرمجية</h5>
+              <h5 class="svc-heading">Software Development</h5>
               <p class="svc-desc">
-                من مواقع إلى تطبيقات ويب وجوال، نجمع بين التصميم الجيد
-                والتكنولوجيا لتقديم حلول رقمية تحقق النتائج.
+                From websites to web and mobile apps, we combine great design
+                with technology to deliver digital solutions that drive results.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -745,13 +761,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-2">
               <i class="bi bi-graph-up-arrow svc-icon"></i>
-              <h5 class="svc-heading">الحلول الرقمية الذكية</h5>
+              <h5 class="svc-heading">Smart Digital Solutions</h5>
               <p class="svc-desc">
-                من الحملات المستهدفة إلى الاستراتيجيات الرقمية، نساعد علامتك
-                التجارية على النجاح في المشهد الرقمي.
+                From targeted campaigns to digital strategies, we help your
+                brand succeed in the digital landscape.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -759,13 +775,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-3">
               <i class="bi bi-shield-lock svc-icon"></i>
-              <h5 class="svc-heading">حلول الأمن السيبراني</h5>
+              <h5 class="svc-heading">Cybersecurity Solutions</h5>
               <p class="svc-desc">
-                من أنظمة قوية إلى حلول مخصصة، نحمي أعمالك من التهديدات الرقمية
-                ونضمن سلامة بياناتك.
+                From robust systems to tailored solutions, we protect your
+                business from digital threats and safeguard your data.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -773,13 +789,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-4">
               <i class="bi bi-megaphone svc-icon"></i>
-              <h5 class="svc-heading">إعلانات وسائل التواصل الاجتماعي</h5>
+              <h5 class="svc-heading">Social Media Advertising</h5>
               <p class="svc-desc">
-                تشغيل إعلانات قوية تساعد الشركات على الوصول إلى جمهورها المستهدف
-                وزيادة التفاعل عبر المنصات الاجتماعية.
+                Run powerful ads that help businesses reach their target
+                audience and increase engagement across social platforms.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -787,13 +803,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-5">
               <i class="bi bi-cloud svc-icon"></i>
-              <h5 class="svc-heading">خدمات السحابة</h5>
+              <h5 class="svc-heading">Cloud Services</h5>
               <p class="svc-desc">
-                خدماتنا السحابية تساعد الشركات على التوسع وتقليل التكاليف وتعزيز
-                الكفاءة التشغيلية.
+                Our cloud solutions help businesses scale, reduce costs, and
+                enhance operational efficiency.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -801,13 +817,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-6">
               <i class="bi bi-people svc-icon"></i>
-              <h5 class="svc-heading">إدارة وسائل التواصل الاجتماعي</h5>
+              <h5 class="svc-heading">Social Media Management</h5>
               <p class="svc-desc">
-                نساعدك على إدارة حضور علامتك التجارية على المنصات الاجتماعية
-                لتحقيق نموّ ثابت.
+                We help you manage your brand’s presence on social platforms to
+                achieve steady growth.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -815,13 +831,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-7">
               <i class="bi bi-database svc-icon"></i>
-              <h5 class="svc-heading">حلول قواعد البيانات</h5>
+              <h5 class="svc-heading">Database Solutions</h5>
               <p class="svc-desc">
-                نقدم حلول قواعد بيانات موثوقة وقابلة للتوسع لتلبية احتياجات
-                أعمالك وضمان الأداء العالي.
+                We provide reliable and scalable database solutions tailored to
+                your business needs, ensuring high performance.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -829,13 +845,13 @@
           <div class="offset-md-1 col-md-5 col-sm-12">
             <div class="svc-card svc-8">
               <i class="bi bi-brush svc-icon"></i>
-              <h5 class="svc-heading">التصميم الجرافيكي</h5>
+              <h5 class="svc-heading">Graphic Design</h5>
               <p class="svc-desc">
-                نبرز علامتك التجارية من خلال تصميمات مميزة وواجهات عصرية تترك
-                انطباعًا قويًا.
+                We make your brand stand out with unique designs and modern
+                interfaces that leave a strong impression.
               </p>
               <div class="know-btn">
-                <button class="svc-chip">اعرف المزيد</button>
+                <button class="svc-chip">Learn More</button>
               </div>
             </div>
           </div>
@@ -846,119 +862,127 @@
     <!-- ===== لماذا نحن ===== -->
     <section>
       <div class="container">
-        <div class="row whyUS">
-          <h1>لماذا تختار اطلس للمبرمجيات</h1>
+        <div class="row whyUS" dir="ltr">
+          <h1>Why Choose Atlas Software</h1>
           <br />
           <p>
-            متخصصون في التكنولوجيا والإبداع، نقدم خدمات متكاملة لبناء وتصميم
-            وتنمية عملك عبر الإنترنت.
+            We specialize in technology and creativity, delivering end-to-end
+            services to build, design, and grow your business online.
           </p>
         </div>
 
-        <div class="row whyUS2">
+        <div class="row whyUS2" dir="ltr">
           <div class="row my-5">
             <div class="col-md-4 col-sm-12 my-5">
               <div class="service-box p-4 shadow rounded">
-                <h4 class="mb-3">نتائج عالية الجودة</h4>
+                <h4 class="mb-3">High-Quality Results</h4>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service1"
-                    >نتائج قابلة للقياس</label
+                    >Measurable outcomes</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service2"
-                    >تحسين الأداء</label
+                    >Performance optimization</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service3"
-                    >رضا العملاء</label
+                    >Customer satisfaction</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service3"
-                    >الابتكار</label
+                    >Innovation</label
                   >
                 </div>
               </div>
             </div>
+
             <div class="col-md-4 col-sm-12 my-5">
               <div class="service-box p-4 shadow rounded">
-                <h4 class="mb-3">تسليم عالي الجودة</h4>
+                <h4 class="mb-3">Reliable Delivery</h4>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service1"
-                    >التسليم في الوقت المحدد</label
+                    >On-time delivery</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service2"
-                    >انسيابية</label
+                    >Smooth processes</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
-                  <label class="form-check-label" for="service3">أمان</label>
+                  <label class="form-check-label" for="service3"
+                    >Security</label
+                  >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service3"
-                    >دعم شامل</label
+                    >Comprehensive support</label
                   >
                 </div>
               </div>
             </div>
+
             <div class="col-md-4 col-sm-12 my-5">
               <div class="service-box p-4 shadow rounded">
-                <h4 class="mb-3">الحلول عالية الجودة</h4>
+                <h4 class="mb-3">Quality Solutions</h4>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service1"
-                    >الموثوقية</label
+                    >Reliability</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
-                  <label class="form-check-label" for="service2">التوفّر</label>
+                  <label class="form-check-label" for="service2"
+                    >Availability</label
+                  >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
                   <label class="form-check-label" for="service3"
-                    >سهولة الصيانة</label
+                    >Easy maintenance</label
                   >
                 </div>
                 <div class="form-check">
                   <div class="form-check-input" id="service1">
-                    <img src="assets/images/check-box.png" />
+                    <img src="../assets/images/check-box.png" alt="" />
                   </div>
-                  <label class="form-check-label" for="service3">الجودة</label>
+                  <label class="form-check-label" for="service3"
+                    >High quality</label
+                  >
                 </div>
               </div>
             </div>
@@ -968,15 +992,15 @@
     </section>
 
     <section id="projects" class="apps-section">
-      <div class="container">
-        <h1>لماذا تختار اطلس للمبرمجيات</h1>
+      <div class="container" dir="ltr">
+        <h1>Why Choose Atlas Software</h1>
 
         <div
           class="apps-shell container d-flex align-items-center justify-content-between gap-md-3"
         >
           <!-- left arrow (prev) -->
-          <div class="arrow-wrap" aria-label="السابق">
-            <i class="bi bi-chevron-right"></i>
+          <div class="arrow-wrap" aria-label="Previous">
+            <i class="bi bi-chevron-left"></i>
           </div>
 
           <!-- middle: slides -->
@@ -984,28 +1008,27 @@
             <!-- ===== Slide 1 ===== -->
             <div class="slide active">
               <div class="row align-items-center g-4">
-                <!-- mobile title (shown on phones only) -->
+                <!-- mobile title -->
                 <h3 class="feature-title mobile-only d-lg-none">
-                  تطوير التطبيقات
+                  App Development
                 </h3>
 
-                <!-- desktop text (hidden on mobile already) -->
+                <!-- desktop text -->
                 <div class="col-lg-6 project-desc">
-                  <h3 class="feature-title">تطوير التطبيقات</h3>
+                  <h3 class="feature-title">App Development</h3>
                   <p class="feature-text mb-3">
-                    بيت لينك هو تطبيق ذكي وسهل الاستخدام مصمم لجمع أصحاب
-                    الحيوانات الأليفة في مكان واحد. التطبيق يجعل من السهل على
-                    الناس العثور على الحيوانات الأليفة، والتبنّي، والعناية بها،
-                    مع تقديم مجموعة متنوعة من المزايا الداعمة لأصحاب الحيوانات.
+                    PetLink is a smart, user-friendly app designed to bring pet
+                    owners together in one place. It makes it easy to find pets,
+                    adopt, and care for them, while offering a wide variety of
+                    features to support pet owners.
                   </p>
                   <p class="feature-text mb-4 mt-3">
-                    يجمع أصحاب الحيوانات الأليفة في مكان واحد، ويُسهّل العثور
-                    على الحيوانات الأليفة، مع مزايا داعمة متنوعة لأصحاب
-                    الحيوانات.
+                    Connects pet owners in one place, simplifies finding pets,
+                    and provides supportive features for pet care and adoption.
                   </p>
                   <div class="show-projects-container">
                     <a href="projects.html" class="btn btn-outline-dark cta-btn"
-                      >عرض جميع المشاريع</a
+                      >View All Projects</a
                     >
                   </div>
                 </div>
@@ -1020,10 +1043,10 @@
                   </div>
                 </div>
 
-                <!-- mobile CTA (below panel) -->
+                <!-- mobile CTA -->
                 <div class="mobile-cta d-lg-none">
                   <a href="projects.html" class="btn btn-outline-dark cta-btn"
-                    >عرض جميع المشاريع</a
+                    >View All Projects</a
                   >
                 </div>
               </div>
@@ -1034,23 +1057,24 @@
               <div class="row align-items-center g-4">
                 <!-- mobile title -->
                 <h3 class="feature-title mobile-only d-lg-none">
-                  تصميم واجهات المستخدم
+                  UI/UX Design
                 </h3>
 
                 <!-- desktop text -->
                 <div class="col-lg-6 project-desc">
-                  <h3 class="feature-title">تصميم واجهات المستخدم</h3>
+                  <h3 class="feature-title">UI/UX Design</h3>
                   <p class="feature-text mb-3">
-                    نصمم واجهات جذّابة وبسيطة تمنح مستخدميك تجربة سلسة، مع
-                    اهتمام دقيق بالتفاصيل وتناسق الهوية البصرية.
+                    We design attractive and simple interfaces that provide your
+                    users with a seamless experience, paying close attention to
+                    detail and brand consistency.
                   </p>
                   <p class="feature-text mb-4 mt-3">
-                    من البحث إلى النماذج الأولية والاختبارات، نضمن أن المنتج سهل
-                    وسريع ويؤدي هدفه بوضوح.
+                    From research to prototypes and testing, we ensure the
+                    product is easy, fast, and clearly achieves its purpose.
                   </p>
                   <div class="show-projects-container">
                     <a href="projects.html" class="btn btn-outline-dark cta-btn"
-                      >عرض جميع المشاريع</a
+                      >View All Projects</a
                     >
                   </div>
                 </div>
@@ -1076,7 +1100,7 @@
                 <!-- mobile CTA -->
                 <div class="mobile-cta d-lg-none">
                   <a href="projects.html" class="btn btn-outline-dark cta-btn"
-                    >عرض جميع المشاريع</a
+                    >View All Projects</a
                   >
                 </div>
               </div>
@@ -1087,23 +1111,23 @@
               <div class="row align-items-center g-4">
                 <!-- mobile title -->
                 <h3 class="feature-title mobile-only d-lg-none">
-                  حلول الويب والمتاجر
+                  Web & E-Commerce Solutions
                 </h3>
 
                 <!-- desktop text -->
                 <div class="col-lg-6 project-desc">
-                  <h3 class="feature-title">حلول الويب والمتاجر</h3>
+                  <h3 class="feature-title">Web & E-Commerce Solutions</h3>
                   <p class="feature-text mb-3">
-                    مواقع ومتاجر إلكترونية سريعة وآمنة ومتجاوبة، مبنية وفق أفضل
-                    الممارسات وتجربة شراء مريحة.
+                    Fast, secure, and responsive websites and online stores,
+                    built with best practices for a smooth shopping experience.
                   </p>
                   <p class="feature-text mb-4 mt-3">
-                    نركز على الأداء، الـSEO، وسهولة الإدارة لتضمن نموًا مستمرًا
-                    لأعمالك على الويب.
+                    We focus on performance, SEO, and easy management to ensure
+                    continuous growth of your online business.
                   </p>
                   <div class="show-projects-container">
                     <a href="projects.html" class="btn btn-outline-dark cta-btn"
-                      >عرض جميع المشاريع</a
+                      >View All Projects</a
                     >
                   </div>
                 </div>
@@ -1129,7 +1153,7 @@
                 <!-- mobile CTA -->
                 <div class="mobile-cta d-lg-none">
                   <a href="projects.html" class="btn btn-outline-dark cta-btn"
-                    >عرض جميع المشاريع</a
+                    >View All Projects</a
                   >
                 </div>
               </div>
@@ -1137,70 +1161,71 @@
           </div>
 
           <!-- right arrow (next) -->
-          <div class="arrow-wrap" aria-label="التالي">
-            <!-- RTL: أيقونة تشير لليسار -->
-            <i class="bi bi-chevron-left"></i>
+          <div class="arrow-wrap" aria-label="Next">
+            <i class="bi bi-chevron-right"></i>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ===== Contact ===== -->
-    <section dir="rtl" class="contact-us" id="contact">
+    <section dir="ltr" class="contact-us" id="contact">
       <div class="container my-5">
         <div class="row">
-          <h1 class="text-center">تواصل معنا</h1>
+          <h1 class="text-center">Contact Us</h1>
           <p class="text-center">
-            تبدأ الابتكارات برسالة بسيطة. تواصل معنا ودعنا نحوّل أفكارك إلى
-            تجارب رقمية مؤثرة
+            Innovation starts with a simple message. Get in touch and let’s turn
+            your ideas into impactful digital experiences.
           </p>
         </div>
         <form>
           <div class="row g-4">
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="input1" class="form-label">الاسم الكامل</label>
+                <label for="input1" class="form-label">Full Name</label>
                 <input
                   type="text"
                   class="form-control"
                   id="input1"
-                  placeholder="أدخل اسمك الكامل"
+                  placeholder="Enter your full name"
                 />
               </div>
               <div class="mb-3">
-                <label for="input2" class="form-label">البريد الإلكتروني</label>
+                <label for="input2" class="form-label">Email Address</label>
                 <input
                   type="email"
                   class="form-control"
                   id="input2"
-                  placeholder="أدخل بريدك الالكتروني"
+                  placeholder="Enter your email address"
                 />
               </div>
               <div class="mb-3">
-                <label for="dropdown" class="form-label">اختر الخدمة</label>
+                <label for="dropdown" class="form-label">Select Service</label>
                 <select class="form-select" id="dropdown">
-                  <option selected disabled>اختر خدمة</option>
-                  <option value="1">تصميم مواقع</option>
-                  <option value="2">تطوير تطبيقات</option>
-                  <option value="3">استشارات تقنية</option>
+                  <option selected disabled>Choose a service</option>
+                  <option value="1">Web Design</option>
+                  <option value="2">App Development</option>
+                  <option value="3">Tech Consultation</option>
                 </select>
               </div>
             </div>
 
             <div class="col-md-6">
               <div class="mb-3">
-                <label for="message" class="form-label">أخبرنا عن مشروعك</label>
+                <label for="message" class="form-label"
+                  >Tell Us About Your Project</label
+                >
                 <textarea
                   class="form-control textarea-blue"
                   id="message"
                   rows="6"
-                  placeholder="اكتب لنا عن مشروعك..."
+                  placeholder="Write to us about your project..."
                 ></textarea>
               </div>
               <div class="row">
                 <div class="offset-md-6 col-md-6 text-left">
                   <button type="submit" class="btn btn-primary text-left">
-                    إرسال
+                    Send
                   </button>
                 </div>
               </div>
@@ -1211,20 +1236,22 @@
     </section>
 
     <!-- ======= FOOTER (BLACK) ======= -->
-    <footer class="footer-dark" dir="rtl">
+    <footer class="footer-dark" dir="ltr">
       <div class="container">
         <div class="row g-4 align-items-start">
+          <!-- Left side -->
           <div class="col-lg-8">
             <div class="text-center text-lg-start mb-3">
               <img
-                src="assets/images/logo.svg"
-                alt="أطلس"
+                src="../assets/images/logo.svg"
+                alt="Atlas"
                 class="footer-logo"
               />
             </div>
             <p class="footer-text mb-4">
-              نحن متخصصون في تقديم خدمات رقمية احترافية، من البرمجة والتصميم إلى
-              التسويق والاستراتيجيات المخصصة لتناسب احتياجات عملك.
+              We specialize in delivering professional digital services, from
+              programming and design to marketing and tailored strategies that
+              meet your business needs.
             </p>
 
             <div class="socials">
@@ -1241,40 +1268,49 @@
             </div>
           </div>
 
+          <!-- Right side -->
           <div class="col-lg-4">
-            <h3 class="footer-title">معلومات الاتصال</h3>
+            <h3 class="footer-title">Contact Information</h3>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span
-              ><span>الرياض - السويدي شارع صيدا - ممشي السويد</span>
+              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span>
+              <span>Riyadh - Al-Suwaidi, Saida Street - Al-Suwaidi Walk</span>
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-telephone"></i></span
-              ><a href="tel:+966551235523" style="direction: ltr;text-decoration: none;color: white;">+96 6551235523</a>
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span>
+              <a
+                href="tel:+966551235523"
+                style="direction: ltr; text-decoration: none; color: white"
+                >+96 6551235523</a
+              >
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-telephone"></i></span
-              ><a href="tel:+966550458841" style="direction: ltr;text-decoration: none;color: white;">+96 6550458841</a>
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span>
+              <a
+                href="tel:+966550458841"
+                style="direction: ltr; text-decoration: none; color: white"
+                >+96 6550458841</a
+              >
             </div>
             <div class="foot-item">
-              <span class="foot-icon"><i class="bi bi-envelope"></i></span
-              ><span>atlascompany@gmail.com</span>
+              <span class="foot-icon"><i class="bi bi-envelope"></i></span>
+              <span>atlascompany@gmail.com</span>
             </div>
-    
+
             <div class="mt-4">
-              <h3 class="footer-title">ساعات العمل</h3>
+              <h3 class="footer-title">Working Hours</h3>
               <div class="hours">
                 <p>
-                  <small>9:00 صباحًا – 5:00 مساءً</small> &nbsp; — &nbsp; الأحد
-                  – الخميس
+                  <small>9:00 AM – 5:00 PM</small> &nbsp; — &nbsp; Sunday –
+                  Thursday
                 </p>
-                <p><small>مغلق</small> &nbsp; — &nbsp; الجمعة – السبت</p>
+                <p><small>Closed</small> &nbsp; — &nbsp; Friday – Saturday</p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="footer-sep"></div>
-        <p class="copy">حقوق النشر 2025© أطلس، جميع الحقوق محفوظة</p>
+        <p class="copy">© 2025 Atlas. All Rights Reserved.</p>
       </div>
     </footer>
 

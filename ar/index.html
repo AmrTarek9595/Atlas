@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>أطلس — الرئيسية</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap RTL -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/css/bootstrap.rtl.min.css"
+      integrity="sha512-4W9f7EnJgM33kD11Ux2XNF9DSpJ7LoQXCvBNhzKTorRSyjPHmjXhHMZMafIYqYvTNWahUk2ulNsarMMLDEv4zA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Cairo font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* ====== Base ====== */
+      :root {
+        --brand-dark: #000061;
+        --text-muted: #6b7280;
+        --nav-height: 180px;
+
+        /* footer */
+        --footer-bg: #0a0a0a;
+        --footer-sep: rgba(255, 255, 255, 0.12);
+        --footer-icon: #1a73e8;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      span,
+      body,
+      section {
+        font-family: "Cairo", sans-serif;
+      }
+      body {
+        background: #fff;
+        padding-top: var(--nav-height);
+      }
+
+      /* ====== Navbar (kept) ====== */
+      .navbarr {
+        margin-inline: 300px;
+        gap: 5em;
+      }
+      .navbar-nav {
+        gap: 2em;
+      }
+      .navbar-nav a {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      .lang-circle {
+        display: inline-block;
+        background-color: #6c757d;
+        color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .lang-circle:hover {
+        background-color: #495057;
+        color: #fff;
+      }
+      #navbarNavAltMarkup {
+        justify-content: center;
+      }
+      .nav-bar-button {
+        background-color: #000000;
+        font-size: 20px;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 10px 25px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 50px;
+        width: 200px;
+      }
+      .navbar-nav .nav-link.active {
+        position: relative;
+      }
+      .navbar-nav .nav-link.active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 20%;
+        width: 60%;
+        height: 2px;
+        background-color: #0074b0;
+        border-radius: 2px;
+      }
+      @media (max-width: 988px) {
+        .navbar-nav .nav-link.active::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          right: 4%; /* Adjust if needed */
+          width: 4%; /* Adjust width for smaller screens */
+          height: 2px;
+          background-color: #0074b0;
+          border-radius: 2px;
+        }
+      }
+
+      /* ====== Hero (kept) ====== */
+      .hero-image {
+        background-image: linear-gradient(
+            rgb(255 250 250 / 0%),
+            rgb(255 255 255 / 30%)
+          ),
+          url("../assets/images/banner.png");
+        min-height: 70vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .hero-text {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        width: 100%;
+      }
+      .banner-h1 {
+        font-size: clamp(32px, 6vw, 80px);
+        color: #090808;
+        margin-bottom: 8px;
+      }
+      .hero-text p {
+        font-size: 20px;
+        color: #374151;
+        margin-bottom: 20px;
+      }
+      .hero-text a {
+        background-color: var(--brand-dark);
+        font-size: 18px;
+        font-weight: bold;
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 12px 24px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 288px;
+      }
+
+      /* ===== Services cards (kept) ===== */
+      .services-title {
+        font-weight: 900;
+        letter-spacing: 0.5px;
+      }
+      .services-note {
+        color: var(--text-muted);
+      }
+      .svc-card {
+        border-radius: 20px;
+        margin-inline: 24px;
+        padding: 24px;
+        color: #fff;
+        height: 100%;
+        position: relative;
+        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column;
+      }
+      .svc-card .svc-desc {
+        flex-grow: 1;
+      }
+      .know-btn {
+        margin-top: auto;
+      }
+      .svc-1 {
+        background: #0a79a6;
+      }
+      .svc-2 {
+        background: #575866;
+      }
+      .svc-3 {
+        background: #050a5b;
+      }
+      .svc-4 {
+        background: #9a9a9a;
+      }
+      .svc-5 {
+        background: #8c8c8c;
+      }
+      .svc-6 {
+        background: #081063;
+      }
+      .svc-7 {
+        background: #44495a;
+      }
+      .svc-8 {
+        background: #097fb0;
+      }
+      .svc-heading {
+        font-weight: bold;
+        font-size: 30px;
+        margin-bottom: 10px;
+        margin-block: 40px;
+      }
+      .svc-desc {
+        color: #e7ebf3;
+        font-size: 18px;
+        max-width: 70%;
+      }
+      .know-btn {
+        width: 100%;
+        text-align: end;
+      }
+      .svc-chip {
+        background: #ffffff;
+        color: #111827;
+        border: 0;
+        border-radius: 999px;
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 12px;
+      }
+      .svc-icon {
+        font-size: 36px;
+        opacity: 0.95;
+        color: #fff;
+      }
+
+      /* ===== Why us (kept) ===== */
+      .whyUS {
+        direction: rtl;
+        display: flex;
+        flex-direction: column;
+      }
+      .whyUS h1 {
+        text-align: right;
+        font-weight: 700;
+        max-width: 40%;
+      }
+      .whyUS p {
+        text-align: right;
+        max-width: 40%;
+        font-size: 24px;
+      }
+      .service-box {
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+      }
+      .service-box h4 {
+        text-align: center;
+        color: #333;
+        font-weight: bold;
+      }
+      .form-check-label {
+        font-size: 16px;
+      }
+      #service1 {
+        float: left;
+      }
+      #service1 img {
+        width: 15px;
+        height: 15px;
+      }
+      .whyUS2 {
+        direction: rtl;
+      }
+      .whyUS2 .form-check-label {
+        float: right;
+        font-size: 20px;
+      }
+      .whyUS2 .form-check {
+        margin-block: 40px;
+      }
+
+      /* ===== Contact (kept) ===== */
+      .contact-us form button {
+        background-color: var(--brand-dark);
+        font-size: 20px;
+        outline: 0;
+        display: inline-block;
+        padding: 10px 25px;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 20px;
+        width: 170px;
+      }
+      .contact-us h1 {
+        font-size: 42px;
+        font-weight: bold;
+      }
+      .contact-us p {
+        font-size: 20px;
+        color: var(--text-muted);
+      }
+      .contact-us input,
+      .contact-us select,
+      .textarea-blue {
+        border-radius: 5px !important;
+        border: 2px solid #cccccc !important;
+        direction: rtl !important;
+      }
+      @media (max-width: 991.98px) {
+        .navbarr {
+          margin-inline: 1rem;
+          gap: 1rem;
+        }
+        .whyUS h1,
+        .whyUS p {
+          max-width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 1024px) {
+        .apps-section h1 {
+          text-align: center !important;
+          font-weight: 700;
+          max-width: 100% !important;
+          margin-bottom: 32px;
+        }
+        .navbarr {
+          margin-inline: 0px !important;
+        }
+      }
+
+      .apps-section {
+        padding-block: clamp(32px, 7vw, 96px);
+      }
+      .apps-section h1 {
+        text-align: right;
+        font-weight: 700;
+        max-width: 40%;
+        margin-bottom: 32px;
+      }
+      .apps-shell {
+        position: relative;
+      }
+      .apps-shell .arrow-wrap {
+        height: 64px;
+        width: 64px;
+        border-radius: 50%;
+        border: 1px solid #000061;
+        background: #fff;
+        color: #0e0e84;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+        flex: 0 0 64px;
+        cursor: pointer;
+      }
+      .apps-shell .arrow-wrap i {
+        font-size: 20px;
+      }
+      .apps-shell .middle {
+        max-width: 80%;
+        margin-inline: auto;
+        min-height: 500px;
+        align-items: center;
+        width: 100%;
+      }
+      .apps-shell .panel {
+        background: #d9d9dd;
+        border-radius: 28px;
+        width: 80%;
+        height: 450px;
+        margin-right: 15%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08) inset;
+      }
+      .apps-shell .phones {
+        position: relative;
+        width: 86%;
+        max-width: 520px;
+        aspect-ratio: 4/3;
+      }
+      @media (max-width: 991.98px) {
+        .apps-shell .project-desc {
+          display: none;
+        }
+      }
+      .apps-shell .phone {
+        position: absolute;
+        width: 42%;
+        top: 50%;
+        transform: translateY(-50%);
+        filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.18));
+        border-radius: 26px;
+      }
+      .apps-shell .phone.left {
+        left: 4%;
+        rotate: -18deg;
+      }
+      .apps-shell .phone.right {
+        right: 6%;
+        rotate: 5deg;
+      }
+      .apps-shell .feature-title {
+        font-weight: 800;
+        font-size: clamp(22px, 2.8vw, 36px);
+        color: #1b1e6b;
+        margin-bottom: 1rem;
+      }
+      .apps-shell .feature-text {
+        line-height: 1.9;
+        color: #444;
+        font-size: 1.05rem;
+      }
+      .apps-shell .show-projects-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+      }
+      .apps-shell .cta-btn {
+        border-radius: 18px;
+        padding: 14px 22px;
+        font-weight: 600;
+      }
+      /* slides */
+      .apps-shell .slide {
+        display: none;
+      }
+      .apps-shell .slide.active {
+        display: block;
+        animation: fade 0.35s ease;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (max-width: 991.98px) {
+        /* section title like the screenshot */
+        #projects h1 {
+          text-align: center !important;
+          font-weight: 800;
+          margin-bottom: 28px;
+          width: "100%";
+        }
+
+        .apps-shell {
+          position: relative;
+        }
+
+        /* take arrows out of the flex row and float them over the panel */
+        .apps-shell .arrow-wrap {
+          top: 50%;
+          transform: translateY(-50%);
+          height: 56px;
+          width: 56px;
+          flex: 0 0 56px;
+          z-index: 5; /* sit above the panel */
+          background: #fff; /* like screenshot */
+        }
+        /* first arrow = prev (chevron-right in your markup) -> left side */
+        .apps-shell .arrow-wrap:first-of-type {
+          left: 12px;
+        }
+        /* second arrow = next (chevron-left) -> right side */
+        .apps-shell .arrow-wrap:last-of-type {
+          right: 12px;
+        }
+
+        /* middle track & panel */
+        .apps-shell .middle {
+          max-width: 60%;
+          min-height: unset;
+        }
+        .apps-shell .panel {
+          width: 100%;
+          height: auto;
+          min-height: 360px;
+          margin: 0; /* remove desktop offset */
+          border-radius: 28px;
+        }
+        .apps-shell .phones {
+          width: 92%;
+          margin-inline: auto;
+        }
+
+        /* show only the project title on mobile, hide long copy */
+        .apps-shell .project-desc {
+          display: none !important; /* keep desktop block hidden on mobile */
+        }
+        .apps-shell .mobile-only {
+          display: block !important;
+          text-align: center;
+          margin: 0 0 16px 0;
+        }
+        .apps-shell .mobile-only.feature-title {
+          font-size: 28px;
+          color: #0a0a7a; /* close to your brand dark */
+          font-weight: 800;
+          margin-top: 24px;
+        }
+
+        /* CTA below the panel on phones */
+        .apps-shell .mobile-cta {
+          display: flex !important;
+          justify-content: center;
+          margin-top: 28px;
+        }
+        .apps-shell .cta-btn {
+          padding: 12px 22px;
+          border-radius: 18px;
+          font-weight: 700;
+        }
+      }
+
+      /* ===== Footer (BLACK ONLY) ===== */
+      footer.footer-dark {
+        background: var(--footer-bg);
+        color: #fff;
+        padding: 64px 0 28px;
+        border-radius: 24px;
+        margin: 24px 16px;
+      }
+      .footer-title {
+        font-weight: 800;
+        font-size: clamp(22px, 2.2vw, 28px);
+        margin-bottom: 20px;
+      }
+      .foot-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+        color: #e9eef7;
+        font-size: 18px;
+      }
+      .foot-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--footer-icon);
+        display: grid;
+        place-items: center;
+        flex: 0 0 44px;
+      }
+      .foot-icon i {
+        color: #fff;
+        font-size: 20px;
+      }
+      .footer-text {
+        color: #cbd5e1;
+        line-height: 2;
+        font-size: 18px;
+        max-width: 70%;
+      }
+      .socials {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .socials a {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        display: grid;
+        place-items: center;
+        color: #fff;
+        text-decoration: none;
+        transition: 0.2s ease;
+      }
+      .socials a:hover {
+        background: #ffffff22;
+      }
+      .hours p {
+        margin: 0 0 8px 0;
+        color: #cbd5e1;
+      }
+      .hours small {
+        color: #aab4c1;
+      }
+      .footer-sep {
+        height: 1px;
+        background: var(--footer-sep);
+        margin: 28px 0 16px;
+      }
+      .copy {
+        color: #d1d5db;
+        text-align: center;
+        font-size: 15px;
+      }
+      .footer-logo {
+        max-width: 260px;
+        height: auto;
+      }
+      @media (max-width: 991.98px) {
+        footer.footer-dark {
+          border-radius: 0;
+          margin: 0;
+        }
+        .footer-logo {
+          max-width: 200px;
+        }
+        .foot-item {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ===== Navbar ===== -->
+    <section>
+      <nav
+        class="navbar navbar-expand-lg fixed-top shadow-sm bg-white"
+        dir="rtl"
+      >
+        <div class="container-fluid navbarr">
+          <a class="navbar-brand" href="#"
+            ><img src="../assets/images/logo.svg" alt="logo"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >الرئيسية</a
+              >
+              <a class="nav-link" href="index.html#services">الخدمات</a>
+              <a class="nav-link" href="pricing.html">الأسعار</a>
+              <a class="nav-link" href="projects.html">المشاريع</a>
+            </div>
+          </div>
+
+          <div class="collapse navbar-collapse">
+            <div class="navbar-nav">
+              <div class="container">
+                <div class="row align-items-center">
+                  <div class="col-3">
+                    <a href="../en/index-en.html" class="lang-circle">EN</a>
+                  </div>
+                  <div class="col-9">
+                    <a
+                      href="#contact"
+                      class="nav-bar-button"
+                      style="text-decoration: none"
+                      >تواصل معانا</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <!-- ===== Hero ===== -->
+    <section>
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1 class="banner-h1">الحلول المناسبة لعملك</h1>
+          <p>
+            من الفكرة إلى منتج قابل للتطوير، فريق تقني موثوق يقدم خدماته بسرعة
+          </p>
+          <div class="container">
+            <div class="row g-3 justify-content-center">
+              <div class="col-6 col-md-4 d-flex justify-content-center">
+                <a href="#contact" class="btn btn-primary w-auto">اطلب خدمة</a>
+              </div>
+              <div class="col-6 col-md-4 d-flex justify-content-center">
+                <a href="projects.html" class="btn btn-secondary w-auto"
+                  >استكشف الخدمات</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Services ===== -->
+    <section id="services" class="py-5">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2 class="services-title mb-2">خدماتنا</h2>
+          <p class="services-note">
+            خدمات رقمية متكاملة للمواقع، تطبيقات، تصميم، تسويق، واتصالات
+          </p>
+        </div>
+
+        <div class="row g-4 px-md-5">
+          <!-- 1 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-1">
+              <i class="bi bi-code-slash svc-icon"></i>
+              <h5 class="svc-heading">تطوير المنتجات البرمجية</h5>
+              <p class="svc-desc">
+                من مواقع إلى تطبيقات ويب وجوال، نجمع بين التصميم الجيد
+                والتكنولوجيا لتقديم حلول رقمية تحقق النتائج.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 2 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-2">
+              <i class="bi bi-graph-up-arrow svc-icon"></i>
+              <h5 class="svc-heading">الحلول الرقمية الذكية</h5>
+              <p class="svc-desc">
+                من الحملات المستهدفة إلى الاستراتيجيات الرقمية، نساعد علامتك
+                التجارية على النجاح في المشهد الرقمي.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 3 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-3">
+              <i class="bi bi-shield-lock svc-icon"></i>
+              <h5 class="svc-heading">حلول الأمن السيبراني</h5>
+              <p class="svc-desc">
+                من أنظمة قوية إلى حلول مخصصة، نحمي أعمالك من التهديدات الرقمية
+                ونضمن سلامة بياناتك.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-4">
+              <i class="bi bi-megaphone svc-icon"></i>
+              <h5 class="svc-heading">إعلانات وسائل التواصل الاجتماعي</h5>
+              <p class="svc-desc">
+                تشغيل إعلانات قوية تساعد الشركات على الوصول إلى جمهورها المستهدف
+                وزيادة التفاعل عبر المنصات الاجتماعية.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 5 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-5">
+              <i class="bi bi-cloud svc-icon"></i>
+              <h5 class="svc-heading">خدمات السحابة</h5>
+              <p class="svc-desc">
+                خدماتنا السحابية تساعد الشركات على التوسع وتقليل التكاليف وتعزيز
+                الكفاءة التشغيلية.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-6">
+              <i class="bi bi-people svc-icon"></i>
+              <h5 class="svc-heading">إدارة وسائل التواصل الاجتماعي</h5>
+              <p class="svc-desc">
+                نساعدك على إدارة حضور علامتك التجارية على المنصات الاجتماعية
+                لتحقيق نموّ ثابت.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 7 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-7">
+              <i class="bi bi-database svc-icon"></i>
+              <h5 class="svc-heading">حلول قواعد البيانات</h5>
+              <p class="svc-desc">
+                نقدم حلول قواعد بيانات موثوقة وقابلة للتوسع لتلبية احتياجات
+                أعمالك وضمان الأداء العالي.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+          <!-- 8 -->
+          <div class="offset-md-1 col-md-5 col-sm-12">
+            <div class="svc-card svc-8">
+              <i class="bi bi-brush svc-icon"></i>
+              <h5 class="svc-heading">التصميم الجرافيكي</h5>
+              <p class="svc-desc">
+                نبرز علامتك التجارية من خلال تصميمات مميزة وواجهات عصرية تترك
+                انطباعًا قويًا.
+              </p>
+              <div class="know-btn">
+                <button class="svc-chip">اعرف المزيد</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== لماذا نحن ===== -->
+    <section>
+      <div class="container">
+        <div class="row whyUS">
+          <h1>لماذا تختار اطلس للمبرمجيات</h1>
+          <br />
+          <p>
+            متخصصون في التكنولوجيا والإبداع، نقدم خدمات متكاملة لبناء وتصميم
+            وتنمية عملك عبر الإنترنت.
+          </p>
+        </div>
+
+        <div class="row whyUS2">
+          <div class="row my-5">
+            <div class="col-md-4 col-sm-12 my-5">
+              <div class="service-box p-4 shadow rounded">
+                <h4 class="mb-3">نتائج عالية الجودة</h4>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service1"
+                    >نتائج قابلة للقياس</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service2"
+                    >تحسين الأداء</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service3"
+                    >رضا العملاء</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service3"
+                    >الابتكار</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 my-5">
+              <div class="service-box p-4 shadow rounded">
+                <h4 class="mb-3">تسليم عالي الجودة</h4>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service1"
+                    >التسليم في الوقت المحدد</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service2"
+                    >انسيابية</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service3">أمان</label>
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service3"
+                    >دعم شامل</label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 my-5">
+              <div class="service-box p-4 shadow rounded">
+                <h4 class="mb-3">الحلول عالية الجودة</h4>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service1"
+                    >الموثوقية</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service2">التوفّر</label>
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service3"
+                    >سهولة الصيانة</label
+                  >
+                </div>
+                <div class="form-check">
+                  <div class="form-check-input" id="service1">
+                    <img src="../assets/images/check-box.png" />
+                  </div>
+                  <label class="form-check-label" for="service3">الجودة</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="apps-section">
+      <div class="container">
+        <h1>لماذا تختار اطلس للمبرمجيات</h1>
+
+        <div
+          class="apps-shell container d-flex align-items-center justify-content-between gap-md-3"
+        >
+          <!-- left arrow (prev) -->
+          <div class="arrow-wrap" aria-label="السابق">
+            <i class="bi bi-chevron-right"></i>
+          </div>
+
+          <!-- middle: slides -->
+          <div class="middle">
+            <!-- ===== Slide 1 ===== -->
+            <div class="slide active">
+              <div class="row align-items-center g-4">
+                <!-- mobile title (shown on phones only) -->
+                <h3 class="feature-title mobile-only d-lg-none">
+                  تطوير التطبيقات
+                </h3>
+
+                <!-- desktop text (hidden on mobile already) -->
+                <div class="col-lg-6 project-desc">
+                  <h3 class="feature-title">تطوير التطبيقات</h3>
+                  <p class="feature-text mb-3">
+                    بيت لينك هو تطبيق ذكي وسهل الاستخدام مصمم لجمع أصحاب
+                    الحيوانات الأليفة في مكان واحد. التطبيق يجعل من السهل على
+                    الناس العثور على الحيوانات الأليفة، والتبنّي، والعناية بها،
+                    مع تقديم مجموعة متنوعة من المزايا الداعمة لأصحاب الحيوانات.
+                  </p>
+                  <p class="feature-text mb-4 mt-3">
+                    يجمع أصحاب الحيوانات الأليفة في مكان واحد، ويُسهّل العثور
+                    على الحيوانات الأليفة، مع مزايا داعمة متنوعة لأصحاب
+                    الحيوانات.
+                  </p>
+                  <div class="show-projects-container">
+                    <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                      >عرض جميع المشاريع</a
+                    >
+                  </div>
+                </div>
+
+                <!-- image panel -->
+                <div class="col-lg-6">
+                  <div class="panel">
+                    <div class="phones">
+                      <img class="phone left" src="..." alt="app screen 1" />
+                      <img class="phone right" src="..." alt="app screen 2" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- mobile CTA (below panel) -->
+                <div class="mobile-cta d-lg-none">
+                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                    >عرض جميع المشاريع</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== Slide 2 ===== -->
+            <div class="slide">
+              <div class="row align-items-center g-4">
+                <!-- mobile title -->
+                <h3 class="feature-title mobile-only d-lg-none">
+                  تصميم واجهات المستخدم
+                </h3>
+
+                <!-- desktop text -->
+                <div class="col-lg-6 project-desc">
+                  <h3 class="feature-title">تصميم واجهات المستخدم</h3>
+                  <p class="feature-text mb-3">
+                    نصمم واجهات جذّابة وبسيطة تمنح مستخدميك تجربة سلسة، مع
+                    اهتمام دقيق بالتفاصيل وتناسق الهوية البصرية.
+                  </p>
+                  <p class="feature-text mb-4 mt-3">
+                    من البحث إلى النماذج الأولية والاختبارات، نضمن أن المنتج سهل
+                    وسريع ويؤدي هدفه بوضوح.
+                  </p>
+                  <div class="show-projects-container">
+                    <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                      >عرض جميع المشاريع</a
+                    >
+                  </div>
+                </div>
+
+                <!-- image panel -->
+                <div class="col-lg-6">
+                  <div class="panel">
+                    <div class="phones">
+                      <img
+                        class="phone left"
+                        src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=900&auto=format&fit=crop"
+                        alt="ui screen 1"
+                      />
+                      <img
+                        class="phone right"
+                        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=900&auto=format&fit=crop"
+                        alt="ui screen 2"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- mobile CTA -->
+                <div class="mobile-cta d-lg-none">
+                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                    >عرض جميع المشاريع</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- ===== Slide 3 ===== -->
+            <div class="slide">
+              <div class="row align-items-center g-4">
+                <!-- mobile title -->
+                <h3 class="feature-title mobile-only d-lg-none">
+                  حلول الويب والمتاجر
+                </h3>
+
+                <!-- desktop text -->
+                <div class="col-lg-6 project-desc">
+                  <h3 class="feature-title">حلول الويب والمتاجر</h3>
+                  <p class="feature-text mb-3">
+                    مواقع ومتاجر إلكترونية سريعة وآمنة ومتجاوبة، مبنية وفق أفضل
+                    الممارسات وتجربة شراء مريحة.
+                  </p>
+                  <p class="feature-text mb-4 mt-3">
+                    نركز على الأداء، الـSEO، وسهولة الإدارة لتضمن نموًا مستمرًا
+                    لأعمالك على الويب.
+                  </p>
+                  <div class="show-projects-container">
+                    <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                      >عرض جميع المشاريع</a
+                    >
+                  </div>
+                </div>
+
+                <!-- image panel -->
+                <div class="col-lg-6">
+                  <div class="panel">
+                    <div class="phones">
+                      <img
+                        class="phone left"
+                        src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=900&auto=format&fit=crop"
+                        alt="web screen 1"
+                      />
+                      <img
+                        class="phone right"
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=900&auto=format&fit=crop"
+                        alt="web screen 2"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- mobile CTA -->
+                <div class="mobile-cta d-lg-none">
+                  <a href="projects.html" class="btn btn-outline-dark cta-btn"
+                    >عرض جميع المشاريع</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- right arrow (next) -->
+          <div class="arrow-wrap" aria-label="التالي">
+            <!-- RTL: أيقونة تشير لليسار -->
+            <i class="bi bi-chevron-left"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section dir="rtl" class="contact-us" id="contact">
+      <div class="container my-5">
+        <div class="row">
+          <h1 class="text-center">تواصل معنا</h1>
+          <p class="text-center">
+            تبدأ الابتكارات برسالة بسيطة. تواصل معنا ودعنا نحوّل أفكارك إلى
+            تجارب رقمية مؤثرة
+          </p>
+        </div>
+        <form>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="input1" class="form-label">الاسم الكامل</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="input1"
+                  placeholder="أدخل اسمك الكامل"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="input2" class="form-label">البريد الإلكتروني</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="input2"
+                  placeholder="أدخل بريدك الالكتروني"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="dropdown" class="form-label">اختر الخدمة</label>
+                <select class="form-select" id="dropdown">
+                  <option selected disabled>اختر خدمة</option>
+                  <option value="1">تصميم مواقع</option>
+                  <option value="2">تطوير تطبيقات</option>
+                  <option value="3">استشارات تقنية</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="mb-3">
+                <label for="message" class="form-label">أخبرنا عن مشروعك</label>
+                <textarea
+                  class="form-control textarea-blue"
+                  id="message"
+                  rows="6"
+                  placeholder="اكتب لنا عن مشروعك..."
+                ></textarea>
+              </div>
+              <div class="row">
+                <div class="offset-md-6 col-md-6 text-left">
+                  <button type="submit" class="btn btn-primary text-left">
+                    إرسال
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ======= FOOTER (BLACK) ======= -->
+    <footer class="footer-dark" dir="rtl">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-8">
+            <div class="text-center text-lg-start mb-3">
+              <img
+                src="../assets/images/logo.svg"
+                alt="أطلس"
+                class="footer-logo"
+              />
+            </div>
+            <p class="footer-text mb-4">
+              نحن متخصصون في تقديم خدمات رقمية احترافية، من البرمجة والتصميم إلى
+              التسويق والاستراتيجيات المخصصة لتناسب احتياجات عملك.
+            </p>
+
+            <div class="socials">
+              <a href="#" aria-label="Facebook"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="bi bi-linkedin"></i
+              ></a>
+              <a href="#" aria-label="Instagram"
+                ><i class="bi bi-instagram"></i
+              ></a>
+              <a href="#" aria-label="X"><i class="bi bi-twitter-x"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <h3 class="footer-title">معلومات الاتصال</h3>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-geo-alt"></i></span
+              ><span>الرياض - السويدي شارع صيدا - ممشي السويد</span>
+            </div>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span
+              ><a
+                href="tel:+966551235523"
+                style="direction: ltr; text-decoration: none; color: white"
+                >+96 6551235523</a
+              >
+            </div>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-telephone"></i></span
+              ><a
+                href="tel:+966550458841"
+                style="direction: ltr; text-decoration: none; color: white"
+                >+96 6550458841</a
+              >
+            </div>
+            <div class="foot-item">
+              <span class="foot-icon"><i class="bi bi-envelope"></i></span
+              ><span>atlascompany@gmail.com</span>
+            </div>
+
+            <div class="mt-4">
+              <h3 class="footer-title">ساعات العمل</h3>
+              <div class="hours">
+                <p>
+                  <small>9:00 صباحًا – 5:00 مساءً</small> &nbsp; — &nbsp; الأحد
+                  – الخميس
+                </p>
+                <p><small>مغلق</small> &nbsp; — &nbsp; الجمعة – السبت</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-sep"></div>
+        <p class="copy">حقوق النشر 2025© أطلس، جميع الحقوق محفوظة</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.min.js"
+      integrity="sha512-nKXmKvJyiGQy343jatQlzDprflyB5c+tKCzGP3Uq67v+lmzfnZUi/ZT+fc6ITZfSC5HhaBKUIvr/nTLCV+7F+Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- ===== Carousel Logic (Vanilla JS) ===== -->
+    <script>
+      document.querySelectorAll(".apps-shell").forEach(function (shell) {
+        const slides = shell.querySelectorAll(".middle .slide");
+        const arrows = shell.querySelectorAll(".arrow-wrap");
+        if (!slides.length || arrows.length < 2) return;
+
+        let i = 0;
+        function show(idx) {
+          slides.forEach((s, j) => s.classList.toggle("active", j === idx));
+        }
+        show(i);
+
+        // prev on the LEFT (first arrow), next on the RIGHT (second arrow)
+        const prevBtn = arrows[0];
+        const nextBtn = arrows[1];
+
+        prevBtn.addEventListener("click", function () {
+          i = (i - 1 + slides.length) % slides.length;
+          show(i);
+        });
+        nextBtn.addEventListener("click", function () {
+          i = (i + 1) % slides.length;
+          show(i);
+        });
+
+        // Optional: swipe support for touch
+        let startX = null;
+        shell.addEventListener(
+          "touchstart",
+          (e) => {
+            startX = e.touches[0].clientX;
+          },
+          { passive: true }
+        );
+        shell.addEventListener("touchend", (e) => {
+          if (startX === null) return;
+          const dx = e.changedTouches[0].clientX - startX;
+          if (Math.abs(dx) > 50) {
+            if (dx > 0) {
+              // swipe right => previous (in RTL this feels natural)
+              i = (i - 1 + slides.length) % slides.length;
+            } else {
+              i = (i + 1) % slides.length;
+            }
+            show(i);
+          }
+          startX = null;
+        });
+      });
+    </script>
+  </body>
+</html>
