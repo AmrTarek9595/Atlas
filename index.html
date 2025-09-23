@@ -32,7 +32,7 @@
       :root {
         --brand-dark: #000061;
         --text-muted: #6b7280;
-        --nav-height: 180px;
+        --nav-height: 150px;
 
         /* footer */
         --footer-bg: #0a0a0a;
@@ -158,6 +158,7 @@
         font-size: 20px;
         color: #374151;
         margin-bottom: 20px;
+        color: white;
       }
       .hero-text a {
         background-color: var(--brand-dark);
@@ -239,15 +240,25 @@
         width: 100%;
         text-align: end;
       }
-      .svc-chip {
-        background: #ffffff;
-        color: #111827;
-        border: 0;
-        border-radius: 999px;
-        padding: 6px 12px;
-        font-weight: 700;
-        font-size: 12px;
-      }
+.svc-chip {
+  background: linear-gradient(to left, #f3f4f6 50%, #ffffff 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  color: #111827;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 12px;
+  transition: background-position 0.4s ease, color 0.4s ease;
+}
+
+.svc-chip:hover {
+  background-position: left bottom; /* animate fill from right to left */
+  cursor: pointer;
+  color: #000; /* optional: darken text when filled */
+}
+
       .svc-icon {
         font-size: 36px;
         opacity: 0.95;
@@ -273,7 +284,13 @@
       .service-box {
         background-color: #f8f9fa;
         border: 1px solid #ddd;
+          border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
+      .service-box:hover {
+  transform: translateY(-8px) scale(1.03); /* يطلع لفوق شوية ويتكبر */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* ظل أعمق */
+}
       .service-box h4 {
         text-align: center;
         color: #333;
@@ -638,6 +655,10 @@
           font-size: 16px;
         }
       }
+      .form-check-input{
+        border: none;
+        background-color: transparent;
+      }
     </style>
     <link
     rel="stylesheet"
@@ -679,7 +700,7 @@
             </div>
           </div>
 
-          <div class="collapse navbar-collapse">
+          <div class="collapse navbar-collapse">  
             <div class="navbar-nav">
               <div class="container">
                 <div class="row align-items-center">
@@ -689,7 +710,7 @@
                   <div class="col-9">
                     <a
                       href="#contact"
-                      class="nav-bar-button"
+                      class="btn btn-primary nav-bar-button"
                       style="text-decoration: none"
                       >تواصل معانا</a
                     >
@@ -716,7 +737,7 @@
                 <a href="#contact" class="btn btn-primary w-auto">اطلب خدمة</a>
               </div>
               <div class="col-6 col-md-4 d-flex justify-content-center">
-                <a href="projects.html" class="btn btn-secondary w-auto"
+                <a href="projects.html" class="btn btn-primary w-auto"
                   >استكشف الخدمات</a
                 >
               </div>
