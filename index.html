@@ -184,17 +184,31 @@
       .services-note {
         color: var(--text-muted);
       }
-      .svc-card {
-        border-radius: 20px;
-        margin-inline: 24px;
-        padding: 24px;
-        color: #fff;
-        height: 100%;
-        position: relative;
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
-        display: flex;
-        flex-direction: column;
-      }
+     .svc-card {
+  border-radius: 20px;
+  margin-inline: 24px;
+  padding: 24px;
+  color: #fff;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(135deg, #2563eb, #1e40af); /* أزرق متدرج */
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.5s ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-10px) scale(1.05) rotate(-1deg); 
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #1e40af, #2563eb); /* عكس الاتجاه */
+}
+
+.svc-card:hover .svc-icon {
+  transform: rotate(180deg) scale(-0.6);
+  transition: transform 0.4s ease;
+}
+
       .svc-card .svc-desc {
         flex-grow: 1;
       }
